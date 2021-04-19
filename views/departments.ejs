@@ -1,0 +1,38 @@
+<%- include("../partials/header") %>
+<style>
+    a{
+        text-decoration: none;
+        background-color: aqua;
+        border: 1px solid black;
+    }
+    th{
+            border: 5px solid blueviolet;
+            border-collapse: collapse;
+    }        
+    td{
+            border: 1px solid black;
+            border-collapse: collapse;
+    }
+    table{
+        margin: 10% auto;
+        border-collapse: collapse;
+    }
+
+</style>
+
+    <table>
+        <tr>
+            <th>Sl No</th>
+            <th>Department Name</th>
+            <th>link</th>
+        </tr>
+        <% for(var i=0;i< departments.length;i++){%>
+        <tr>
+            <td><%=i+1%></td>
+            <td><%=departments[i].dept_name%></td>
+            <td><a href="/<%=departments[i].dept_name%>">More</a></td>
+        </tr>
+        <%}%>
+       </table>
+
+<%- include("../partials/footer") %>

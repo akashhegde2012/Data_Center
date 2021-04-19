@@ -1,0 +1,148 @@
+<%- include("../partials/header") %>
+<style>
+        #heading{
+            border: 3px solid blueviolet;
+    }        
+    td{
+            border: 3px solid black;
+            padding-left: 1em;
+    }
+    table{
+        border: 2px solid red;
+        border-collapse: collapse;
+    }
+</style>
+<script src="/javascript/table2excel.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
+<div>
+    <table class="table" id="example-table">
+        <tr>
+            <% for (var heading in details[0]){%>
+            <td id="heading"><%=heading%></td>
+            <%}%>
+        </tr>
+        <%details.forEach((detail)=>{%>
+        <tr>
+            <%for (const heading in detail){%>
+            <td><%if(detail[heading] === null){%>
+                Na
+                <%}%>
+                <%=detail[heading]%>
+            </td>
+            <%}%>
+        </tr>
+        <%})%>
+    </table>
+    <!-- <table class="table">
+        <tr>
+                <td>2014-15</td>
+            <% var i,j,k,l,m;%>
+            <% for( i =0;i<research.length ;i++){%>
+                <td>
+                    <% if(research[i].Year === '2014-15'){%>
+                    <%=research[i].faculty_name%>
+                    <%} else {%>
+                      <%  break;}%>
+                        
+                </td>
+            <%}%>
+        </tr>
+        <tr>
+            <td>2015-16</td>
+        <% for( j =i;j<research.length ;j++){%>
+            <td>
+                <% if(research[j].Year === '2015-16'){%>
+                <%=research[j].faculty_name%>
+                <%} else {%>
+                    <%  break;}%>
+                    
+                    
+            </td>
+        <%}%>
+    </tr>
+    <tr>
+        <td>2016-17</td>
+    <% for( k = j;k<research.length ;k++){%>
+        <td>
+            <% if(research[k].Year === '2016-17'){%>
+            <%=research[k].faculty_name%>
+            <%} else {%>
+              <%  break;}%>
+                
+        </td>
+    <%}%>
+    </tr>
+    <tr>
+        <td>2017-18</td>
+    <% for( l =k;l<research.length ;l++){%>
+        <td>
+            <% if(research[l].Year === '2017-18'){%>
+            <%=research[l].faculty_name%>
+            <%} else {%>
+              <%  break;}%>
+                
+        </td>
+    <%}%>
+    </tr>
+    <tr>
+        <td>2018-19</td>
+    <% for(m =l;m<research.length ;m++){%>
+        <td>
+            <% if(research[m].Year === '2018-19'){%>
+            <%=research[m].faculty_name%>
+            <%} else {%>
+              <%  break;}%>
+                
+        </td>
+    <%}%>
+    </tr>
+    </table> -->
+</div>
+<div>
+    <button id="generateExcel">Download</button>
+</div>
+<script>
+//     document.getElementById('generateExcel').addEventListener('click',()=>{
+//     var table2excel = new Table2Excel();
+//     table2excel.export(document.querySelectorAll('#example-table'),'<%=name%>');
+// });
+
+
+$(document).ready(function() {
+    $('#generateExcel').on('click', function(e){
+        $("#example-table").table2excel({
+            exclude: ".noExport",
+            name: "Data",
+            filename: "<%=name%>",
+        });
+    });
+});
+
+
+// $('#generateExcel').click(function () {
+//     $(document).ready(function () {
+//         $("#example-table").table2excel({
+//             filename: "Employees.xls"
+//         });
+//     });
+// });
+      
+        $("#example-table").each(function() {
+        var $this = $(this);
+        var newrows = [];
+        $this.find("tr").each(function(){
+            var i = 0;
+            $(this).find("td").each(function(){
+                i++;
+                if(newrows[i] === undefined) { newrows[i] = $("<tr></tr>"); }
+                newrows[i].append($(this));
+            });
+        });
+        $this.find("tr").remove();
+        $.each(newrows, function(){
+            $this.append(this);
+        });
+    });
+</script>
+<%- include("../partials/footer") %>
