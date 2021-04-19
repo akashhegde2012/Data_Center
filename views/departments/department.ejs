@@ -1,20 +1,6 @@
 <%- include("../partials/header") %>
-<style>
-        #heading{
-            border: 3px solid blueviolet;
-    }        
-    td{
-            border: 3px solid black;
-            padding-left: 1em;
-    }
-    table{
-        border: 2px solid red;
-        border-collapse: collapse;
-    }
-</style>
-<script src="/javascript/table2excel.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
+<link rel="stylesheet" href="/stylesheet/details.css">
+
 <div>
     <table class="table" id="example-table">
         <tr>
@@ -102,47 +88,6 @@
 <div>
     <button id="generateExcel">Download</button>
 </div>
-<script>
-//     document.getElementById('generateExcel').addEventListener('click',()=>{
-//     var table2excel = new Table2Excel();
-//     table2excel.export(document.querySelectorAll('#example-table'),'<%=name%>');
-// });
-
-
-$(document).ready(function() {
-    $('#generateExcel').on('click', function(e){
-        $("#example-table").table2excel({
-            exclude: ".noExport",
-            name: "Data",
-            filename: "<%=name%>",
-        });
-    });
-});
-
-
-// $('#generateExcel').click(function () {
-//     $(document).ready(function () {
-//         $("#example-table").table2excel({
-//             filename: "Employees.xls"
-//         });
-//     });
-// });
-      
-        $("#example-table").each(function() {
-        var $this = $(this);
-        var newrows = [];
-        $this.find("tr").each(function(){
-            var i = 0;
-            $(this).find("td").each(function(){
-                i++;
-                if(newrows[i] === undefined) { newrows[i] = $("<tr></tr>"); }
-                newrows[i].append($(this));
-            });
-        });
-        $this.find("tr").remove();
-        $.each(newrows, function(){
-            $this.append(this);
-        });
-    });
-</script>
+<script src="/javascript/transpose.js"></script>
+<script src="/javascript/downloadExcel.js" ></script>
 <%- include("../partials/footer") %>

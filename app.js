@@ -3,24 +3,14 @@ const   express = require('express'),
         app = express(),
         mysql=require('mysql'),
         methodOverride = require('method-override'),
+        connect = require('./models/db_connect'),
+        db = connect(),
         port = process.env.PORT || 4000;
 
         app.use(methodOverride('_method'));
         app.use(bodyParser.urlencoded({extended:true}));
         app.set('view engine','ejs');
         app.use(express.static('public'));
-        var db = mysql.createConnection({
-            host:'localhost',
-            user:'root',
-            password:'',
-            database:'data_center'
-        });
-        db.connect((err)=>{
-            if(err)
-            console.log(err);
-            else
-            console.log('connected');
-        });
         app.use(require('express-session')(
             {
                 secret:"new sectet",
@@ -36,43 +26,16 @@ app.post('/',(req,res)=>{
     req.session.facultyId = auth;
     res.redirect('/');
 });
-app.get('/',async (req,res)=>{
-    // auth = req.params.auth;
-    // req.session.facultyId = auth;
-    var qry = 'SELECT distinct dept_name from Departments';
-
+app.get('/',(req,res)=>{
     console.log(auth);
-   await db.query(qry,(err,rows,fields)=>{
-        console.log(rows);
-        // console.log(fields);
-        res.render('departments',{departments:rows,auth:auth});
-    });
+    res.render('index');
+
 });
 
-app.get('/:dept_name',async (req,res)=>{
-    // +"'"+req.params.dept_name+"'";
+//requiring other routes
+const   departmentsRoutes = require('./routes/departments');
 
-    var qry = 'select * from from_host_institution where dept_name = ?';
-    var research = []
-    await db.query(qry,req.params.dept_name,(err,rows,fields)=>{ research = rows});
-     qry = 'Select * from Departments where dept_name = ?';
-     var name = [];
-    await db.query(qry,req.params.dept_name,(err,rows,fields)=>{
-        if(err){
-        console.log(err);
-        res.redirect('/');
-        }
-        else{
-        for (var i  = 0;i < rows.length;i++){
-            name[i] = rows[i].Dept_name;
-            delete rows[i].Dept_name;
-        }
-        // console.log(research)
-        res.render('details',{details:rows,name:name[0],research:research});
-        }
-    });
-    
-});
+app.use('/departments',departmentsRoutes);
 
 
 app.listen(port,function(){
