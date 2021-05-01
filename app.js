@@ -5,9 +5,12 @@ const   express = require('express'),
         methodOverride = require('method-override'),
         connect = require('./models/db_connect'),
         db = connect(),
+        xlsx        = require('xlsx'),
+        fileupload = require('express-fileupload'),
         port = process.env.PORT || 4000;
 
         app.use(methodOverride('_method'));
+        app.use(fileupload());
         app.use(bodyParser.urlencoded({extended:true}));
         app.set('view engine','ejs');
         app.use(express.static('public'));

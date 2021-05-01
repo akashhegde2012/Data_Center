@@ -20,73 +20,14 @@
         </tr>
         <%})%>
     </table>
-    <!-- <table class="table">
-        <tr>
-                <td>2014-15</td>
-            <% var i,j,k,l,m;%>
-            <% for( i =0;i<research.length ;i++){%>
-                <td>
-                    <% if(research[i].Year === '2014-15'){%>
-                    <%=research[i].faculty_name%>
-                    <%} else {%>
-                      <%  break;}%>
-                        
-                </td>
-            <%}%>
-        </tr>
-        <tr>
-            <td>2015-16</td>
-        <% for( j =i;j<research.length ;j++){%>
-            <td>
-                <% if(research[j].Year === '2015-16'){%>
-                <%=research[j].faculty_name%>
-                <%} else {%>
-                    <%  break;}%>
-                    
-                    
-            </td>
-        <%}%>
-    </tr>
-    <tr>
-        <td>2016-17</td>
-    <% for( k = j;k<research.length ;k++){%>
-        <td>
-            <% if(research[k].Year === '2016-17'){%>
-            <%=research[k].faculty_name%>
-            <%} else {%>
-              <%  break;}%>
-                
-        </td>
-    <%}%>
-    </tr>
-    <tr>
-        <td>2017-18</td>
-    <% for( l =k;l<research.length ;l++){%>
-        <td>
-            <% if(research[l].Year === '2017-18'){%>
-            <%=research[l].faculty_name%>
-            <%} else {%>
-              <%  break;}%>
-                
-        </td>
-    <%}%>
-    </tr>
-    <tr>
-        <td>2018-19</td>
-    <% for(m =l;m<research.length ;m++){%>
-        <td>
-            <% if(research[m].Year === '2018-19'){%>
-            <%=research[m].faculty_name%>
-            <%} else {%>
-              <%  break;}%>
-                
-        </td>
-    <%}%>
-    </tr>
-    </table> -->
 </div>
 <div>
     <button id="generateExcel">Download</button>
+    <a href="/departments/<%=dept_name%>/new"><button>Insert</button></a>
+    <a href="/departments/<%=dept_name%>/research"><button>research</button></a>
+    <a href="/departments"><button>Departments</button></a>
+    
+
 </div>
 <script src="/javascript/transpose.js"></script>
 <script src="/javascript/downloadExcel.js" ></script>
