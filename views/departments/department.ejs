@@ -1,4 +1,5 @@
 <%- include("../partials/header") %>
+<%- include("../partials/sidenav") %>
 <link rel="stylesheet" href="/stylesheet/details.css">
 
 <div>
@@ -22,14 +23,14 @@
     </table>
 </div>
 <br>
-<div>
+<!-- <div>
     <button id="generateExcel">Download</button>
     <a href="/departments/<%=dept_name%>/new"><button>Insert</button></a>
     <a href="/departments/<%=dept_name%>/research"><button>research</button></a>
     <a href="/departments"><button>Departments</button></a>
     
 
-</div>
+</div> -->
 <script src="/javascript/transpose.js"></script>
 <script src="/javascript/downloadExcel.js" ></script>
 <%- include("../partials/footer") %>
