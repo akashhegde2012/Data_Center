@@ -1,12 +1,20 @@
 
 $(document).ready(function() {
-    $('#generateExcel').on('click', function(e){
-        $("#example-table").table2excel({
+    $('#generateExcel1').on('click', function(e){
+        $(".example-table1").table2excel({
             exclude: ".noExport",
             name: "Data",
-            filename: "<%=name%>",
+            filename: "file",
         });
     });
 });
 
-    
+$(document).ready(function() {
+    $('#generateExcel2').on('click', function(e){
+        $(".example-table2").table2excel({
+            exclude: ".noExport",
+            name: "Data",
+            filename: "file",
+        });
+    });
+});

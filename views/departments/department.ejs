@@ -2,10 +2,10 @@
 <link rel="stylesheet" href="/stylesheet/details.css">
 
 <div>
-    <table class="table" id="example-table">
+    <table class="transpose example-table1" id="example-table">
         <tr>
             <% for (var heading in details[0]){%>
-            <td id="heading"><%=heading%></td>
+            <td class="heading"><%=heading%></td>
             <%}%>
         </tr>
         <%details.forEach((detail)=>{%>
@@ -21,6 +21,7 @@
         <%})%>
     </table>
 </div>
+<br>
 <div>
     <button id="generateExcel">Download</button>
     <a href="/departments/<%=dept_name%>/new"><button>Insert</button></a>

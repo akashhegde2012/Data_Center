@@ -1,145 +1,158 @@
 <%- include("../partials/header") %>
 <link rel="stylesheet" href="/stylesheet/details.css">
 
-<table class="table" id="example-table">
-        <tr>    <h3>Host Institutions</h3>
-
-                <td>2014-15</td>
-            <% var i,j,k,l,m;%>
-            <% for( i =0;i<host.length ;i++){%>
-                
-                    <% if(host[i].Year === '2014-15'){%>
-                        <td>
-                    <%=host[i].faculty_name%>
+<style>
+    td{
+        width: 15em;
+    }
+</style>
+<div class="content">
+    <div>
+        <table class="transpose example-table1">
+            <div>
+                <tr>    <h3>Host Institutions</h3>
+        
+                        <td>2014-15</td>
+                    <% var i,j,k,l,m;%>
+                    <td>
+        
+                    <% for( i =0;i<host.length ;i++){%>
+                        
+                            <% if(host[i].Year === '2014-15'){%>
+                            <%=host[i].faculty_name%><br>
+                            <%} else {%>
+                              <%  break;}%>
+                                
+                    <%}%>
+                </td>
+        
+                </tr>
+                <tr>
+                    <td>2015-16</td>
+                    <td>
+                <% for( j =i;j<host.length ;j++){%>
+                    
+                        <% if(host[j].Year === '2015-16'){%>
+                        <%=host[j].faculty_name%> <br>
+                        <%} else {%>
+                            <%  break;}%>
+                            
+                            
+                <%}%>
+            </td>
+        
+            </tr>
+            <tr>
+                <td>2016-17</td>
+                <td>
+            <% for( k = j;k<host.length ;k++){%>
+                    <% if(host[k].Year === '2016-17'){%>
+                    <%=host[k].faculty_name%> <br>
                     <%} else {%>
                       <%  break;}%>
                         
-                </td>
             <%}%>
-        </tr>
-        <tr>
-            <td>2015-16</td>
-        <% for( j =i;j<host.length ;j++){%>
-            
-                <% if(host[j].Year === '2015-16'){%>
-            <td>
-                <%=host[j].faculty_name%>
-                <%} else {%>
-                    <%  break;}%>
-                    
-                    
-            </td>
-        <%}%>
-    </tr>
-    <tr>
-        <td>2016-17</td>
-    <% for( k = j;k<host.length ;k++){%>
-            <% if(host[k].Year === '2016-17'){%>
-        <td>
-            <%=host[k].faculty_name%>
-            <%} else {%>
-              <%  break;}%>
-                
-        </td>
-    <%}%>
-    </tr>
-    <tr>
-        <td>2017-18  </td>
-    <% for( l =k;l<host.length ;l++){%>
-            <% if(host[l].Year === '2017-18'){%>
-        <td>
-
-            <%=host[l].faculty_name%>
-            <%} else {%>
-              <%  break;}%>
-                
-        </td>
-    <%}%>
-    </tr>
-    <tr>
-        <td>2018-19</td>
-    <% for(m =l;m<host.length ;m++){%>
-            <% if(host[m].Year === '2018-19'){%>
-        <td>
-            <%=host[m].faculty_name%>
-            <%} else {%>
-              <%  break;}%>
-                
-        </td>
-    <%}%>
-    </tr>
-    
-    <tr>   
-        
-        <td>2014-15</td>
-    <% var i,j,k,l,m;%>
-    <% for( i =0;i<other.length ;i++){%>
-        
-            <% if(other[i].Year === '2014-15'){%>
+                </td>
+            </tr>
+            <tr>
+                <td>2017-18  </td>
                 <td>
-            <%=other[i].faculty_name%>
-            <%} else {%>
-              <%  break;}%>
+            <% for( l =k;l<host.length ;l++){%>
+                    <% if(host[l].Year === '2017-18'){%>
+        
+                    <%=host[l].faculty_name%> <br>
+                    <%} else {%>
+                      <%  break;}%>
+                <%}%>
+                </td>
+            </tr>
+            <tr>
+                <td>2018-19</td>
+                <td>
+            <% for(m =l;m<host.length ;m++){%>
+                    <% if(host[m].Year === '2018-19'){%>
+                    <%=host[m].faculty_name%> <br>
+                    <%} else {%>
+                      <%  break;}%>
+                        
+            <%}%>
+                </td>       
+            </tr>
+            </div>
+            </table><br>
+            <button id="generateExcel1">Download Host Institutions</button>
+        
+    </div>
+    <div>
+        <h3>Other Institutions</h3>
+        <table class="transpose example-table2">
+            <tr>   
+        
+                <td>2014-15</td>
+            <% var i,j,k,l,m;%>
+            <td>
+            <% for( i =0;i<other.length ;i++){%>
+                    <% if(other[i].Year === '2014-15'){%>
+                    <%=other[i].faculty_name%> <br>
+                    <%} else {%>
+                      <%  break;}%>
+            <%}%>
+            </td>
+            </tr>
+            <tr>
+                <td>2015-16</td>
+                <td>
+            <% for( j =i;j<other.length ;j++){%>
                 
-        </td>
-    <%}%>
-</tr>
-<tr>
-    <td>2015-16</td>
-<% for( j =i;j<other.length ;j++){%>
-    
-        <% if(other[j].Year === '2015-16'){%>
-    <td>
-        <%=other[j].faculty_name%>
-        <%} else {%>
-            <%  break;}%>
-            
-            
-    </td>
-<%}%>
-</tr>
-<tr>
-<td>2016-17</td>
-<% for( k = j;k<other.length ;k++){%>
-    <% if(other[k].Year === '2016-17'){%>
-<td>
-    <%=other[k].faculty_name%>
-    <%} else {%>
-      <%  break;}%>
-        
-</td>
-<%}%>
-</tr>
-<tr>
-<td>2017-18  </td>
-<% for( l =k;l<other.length ;l++){%>
-    <% if(other[l].Year === '2017-18'){%>
-<td>
-
-    <%=other[l].faculty_name%>
-    <%} else {%>
-      <%  break;}%>
-        
-</td>
-<%}%>
-</tr>
-<tr>
-<td>2018-19</td>
-<% for(m =l;m<other.length ;m++){%>
-    <% if(other[m].Year === '2018-19'){%>
-<td>
-    <%=other[m].faculty_name%>
-    <%} else {%>
-      <%  break;}%>
-        
-</td>
-<%}%>
-</tr>
-    </table>
+                    <% if(other[j].Year === '2015-16'){%>
+                    <%=other[j].faculty_name%> <br>
+                    <%} else {%>
+                        <%  break;}%>     
+                <%}%>
+                </td>
+                </tr>
+                <tr>
+            <td>2016-17</td>
+            <td>
+            <% for( k = j;k<other.length ;k++){%>
+                <% if(other[k].Year === '2016-17'){%>
+                <%=other[k].faculty_name%> <br>
+                <%} else {%>
+                <%  break;}%>
+                    
+            <%}%>
+            </td>
+            </tr>
+            <tr>
+            <td>2017-18  </td>
+            <td>
+            <% for( l =k;l<other.length ;l++){%>
+                <% if(other[l].Year === '2017-18'){%>
+                <%=other[l].faculty_name%> <br>
+                <%} else {%>
+                <%  break;}%>
+                <%}%>
+            </td>
+            </tr>
+            <tr>
+            <td>2018-19</td>
+            <td>
+            <% for(m =l;m<other.length ;m++){%>
+                <% if(other[m].Year === '2018-19'){%>
+                <%=other[m].faculty_name%> <br>
+                <%} else {%>
+                <%  break;}%>
+            <%}%>
+            </td>
+            </tr>
+        </table>
+    </div>
+</div>
 <div>
-    <button id="generateExcel">Download</button>
+    <br>
+    <button id="generateExcel2">Download Other Institutions</button>
     <a href="/departments/<%=dept_name%>/"><button>Back</button></a>
 </div>
-<!-- <script src="/javascript/transpose.js"></script> -->
+<script src="/javascript/transpose.js"></script>
 <script src="/javascript/downloadExcel.js" ></script>
 <%- include("../partials/footer") %>

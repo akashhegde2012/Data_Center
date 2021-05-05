@@ -1,4 +1,4 @@
-#heading{
+.heading{
     border: 3px solid blueviolet;
 }        
 td{
@@ -8,4 +8,23 @@ td{
 table{
 border: 2px solid red;
 border-collapse: collapse;
+}
+
+button{
+    background-color: #151b29;
+    color: yellow;
+    border:2px solid yellow;
+
+    font-size: 0.9em;
+    padding: 0.5em 1em;
+    outline: none;
+    border-radius: 5px;
+    transition: border-color 0.2s , transform 0.2s, box-shadow 0.2s, color 0.2s;
+}
+button:hover{
+    color: whitesmoke;
+    transform: translateY(-2px);
+    border-color: greenyellow;
+    box-shadow: 0 0.5em 0.5em -0.4em greenyellow;
+    cursor: pointer;
 }

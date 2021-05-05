@@ -1,5 +1,5 @@
   
-        $("#example-table").each(function() {
+        $(".transpose").each(function() {
             var $this = $(this);
             var newrows = [];
             $this.find("tr").each(function(){
@@ -15,3 +15,4 @@
                 $this.append(this);
             });
         });
+        

@@ -17,11 +17,8 @@ router.get('/',async (req,res)=>{
 
 router.get('/:dept_name',async (req,res)=>{
     // +"'"+req.params.dept_name+"'";
-    var qry = 'select * from from_host_institution where dept_name = ?';
-    var research = []
-    await db.query(qry,req.params.dept_name,(err,rows,fields)=>{ research = rows});
-   console.log(research)
-     qry = 'Select * from Departments where dept_name = ?';
+
+     var qry = 'Select * from Departments where dept_name = ?';
      var name = [];
     await db.query(qry,req.params.dept_name,(err,rows,fields)=>{
         if(err){
