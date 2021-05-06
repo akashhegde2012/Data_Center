@@ -9,4 +9,29 @@
 <script src="/javascript/table2excel.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/assets/favicon.png" type="image/gif" sizes="16x16">
+<link rel="stylesheet" href="/stylesheet/navbar.css">
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        $('#icon').click(()=>{
+            $('ul').toggleClass('show');
+        });
+    });
+</script>
 <body>
+    <nav>
+        <label for="" class="logo"><img id="brand" src="/assets/brand.png" alt=""></label>
+        <ul>
+            <li><a class="act" href="/departments">Home</a></li>
+            <li><a class="act" href="#">info 1</a></li>
+            <li><a class="act" href="#">Info 2</a></li>
+            <li><a class="act" href="#">Info 3</a></li>
+            <li><a class="act" href="#">Info 4</a></li>
+        </ul>
+        <label id="icon" for="">
+            <i class="fas fa-bars"></i>
+        </label>
+    </nav>

@@ -31,14 +31,14 @@ router.get('/:dept_name',async (req,res)=>{
             delete rows[i].Dept_name;
         }
         // console.log(research)
-        res.render('departments/department',{details:rows,name:name[0],dept_name:req.params.dept_name});
+        res.render('departments/department',{details:rows,name:name[0],research:false,dept_name:req.params.dept_name});
         }
     });
     
 });
 
 router.get('/:dept_name/new',async(req,res)=>{
-        res.render('departments/new',{dept_name:req.params.dept_name});
+        res.render('departments/new',{dept_name:req.params.dept_name,research:false});
 
 });
 router.post('/:dept_name',async (req,res,next)=>{
@@ -68,7 +68,7 @@ router.get('/:dept_name/research',(req,res)=>{
         var qry1 = 'select * from from_other_institution where dept_name=?';
         db.query(qry1,req.params.dept_name,(err,rows1,fields)=>{
             other = rows1;
-            res.render('departments/research',{host:host,other:other,dept_name:req.params.dept_name});
+            res.render('departments/research',{host:host,other:other,research:true,dept_name:req.params.dept_name});
 
         });
 

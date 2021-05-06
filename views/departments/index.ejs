@@ -1,36 +1,7 @@
 <%- include("../partials/header") %>
-<style>
-    a{
-        padding: 1em 1em;
-        text-decoration: none;
-        background-color: aqua;
-        border: 1px solid black;
-    }
-    .link{
-        padding: 0 ;
-    }
+<link rel="stylesheet" href="/stylesheet/index.css">
 
-    .sl{
-        padding: 0 1em;
-    }
-    th{
-        padding: 1em 5em;
-            border: 5px solid blueviolet;
-            
-    }        
-    td{
-        padding: 1em 10em;
-
-            border: 1px solid black;
-            
-    }
-    table{
-        margin: 5% auto;
-        border-collapse: collapse;
-    }
-
-</style>
-
+<div class="content">
     <table>
         <tr>
             <th class="sl">Sl No</th>
@@ -41,9 +12,10 @@
         <tr>
             <td class="sl"><%=i+1%></td>
             <td class="name"><%=departments[i].dept_name%></td>
-            <td class="link"><a href="/departments/<%=departments[i].dept_name%>">More</a></td>
+            <td class="link"><a class="a" href="/departments/<%=departments[i].dept_name%>">More</a></td>
         </tr>
         <%}%>
        </table>
+</div>
 
 <%- include("../partials/footer") %>

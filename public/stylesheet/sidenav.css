@@ -1,0 +1,71 @@
+.sidenav {
+    height: 100vh; /* Full-height: remove this if you want "auto" height */
+    width: 10em; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 2;  
+    top: 5em;
+    left: 0;
+    background-color: #151b29; /* Teal */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+    box-shadow: 1em 1em 1em -0.4em grey;
+
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    width: 100%;
+    text-decoration:none;
+    display: block;
+  }
+  
+button{
+    background-color: #151b29;
+    color: yellow;
+    border:2px solid yellow;
+    width: 100%;
+    font-size: 0.9em;
+    padding: 0.5em 1em;
+    outline: none;
+    border-radius: 0px;
+    transition: border-color 0.2s , transform 0.2s, box-shadow 0.2s, color 0.2s;
+}
+button:hover{
+    color: whitesmoke;
+    transform: translateY(-2px);
+    border-color: greenyellow;
+    box-shadow: 0 0.5em 0.5em -0.4em greenyellow;
+    cursor: pointer;
+}
+button:active{
+    background-color: green;
+}
+  
+  /* When you mouse over the navigation links, change their color */
+  /* .sidenav a button:hover {
+    color: black;
+  } */
+  
+  /* Style page content */
+   /* .main {
+    margin-left: 160px; 
+    padding: 0px 10px;
+  }   */
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+  /* @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }  */
+  
+  /* button
+  {
+    padding: 6px 6px 6px 10px;
+    
+    margin: 20px 20px 20px 20px;
+    text-decoration:none;
+    font-size: 25px;
+    color: brown;
+    display: inline;
+  } */
+  

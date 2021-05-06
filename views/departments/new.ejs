@@ -1,12 +1,16 @@
 <%- include("../partials/header") %>
+<%- include("../partials/sidenav") %>
+
+<link rel="stylesheet" href="/stylesheet/details.css">
 
 
-
-<form action="/departments/<%=dept_name%>" method="POST" enctype="multipart/form-data">
-    <input type="file" name="excel">
-        <input type="submit">
-
-</form>
-
+<div class="content">
+    <form action="/departments/<%=dept_name%>" method="POST" enctype="multipart/form-data">
+        <input type="file" name="excel">
+            <input type="submit">
+    
+    </form>
+    
+</div>
 
 <%- include("../partials/footer") %>
