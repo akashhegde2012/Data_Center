@@ -2,8 +2,9 @@ create table from_host_institution (
 `Dept_name` varchar(100) not null,
 `Year` varchar(30) NOT NULL,
 faculty_name varchar(50) not null,
-primary key(Dept_name,Year,faculty_name),
-foreign key(Dept_name) references Departments(Dept_name));
+primary key(Dept_name,Year,faculty_name)
+-- foreign key(Dept_name) references Departments(Dept_name) on delete cascade 
+);
 
 insert into from_host_institution VALUES
 ('Computer Science And Engineering','2014-15','Ajitha S'),
@@ -630,8 +631,8 @@ create table from_other_institution (
 `Dept_name` varchar(100) not null,
 `Year` varchar(30) NOT NULL,
 faculty_name varchar(50) not null,
-primary key(Dept_name,Year,faculty_name),
-foreign key(Dept_name) references Departments(Dept_name)
+primary key(Dept_name,Year,faculty_name)
+-- foreign key(Dept_name) references Departments(Dept_name) on delete cascade
 );
 
 insert into from_other_institution VALUES

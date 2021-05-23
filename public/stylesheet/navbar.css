@@ -6,11 +6,15 @@
 }
 body{
     font-family: 'Roboto';
+    /* background: #fbe8a6; */
+    /* background-color: #f6f6f6; */
+
+    /* background: linear-gradient(to right , #111aab , #ffffff); */
 }
 nav{
     height: 5em;
     width: 100%;
-    background: #151b29;
+    background: #303c6c;
     position: fixed;
     z-index: 1;
     overflow: hidden;
@@ -70,6 +74,7 @@ transition: .5s;
         cursor: pointer;
     }
     nav ul{
+        top: 5em;
         z-index: 5;
         position: fixed;
         width: 100%;
@@ -97,6 +102,6 @@ transition: .5s;
 #brand{
     margin-top: 0.2em;
     margin-left: 0;
-    width :5em;
+    width :7em;
     height: 2.5em;
 }

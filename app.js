@@ -7,8 +7,9 @@ const   express = require('express'),
         db = connect(),
         xlsx        = require('xlsx'),
         fileupload = require('express-fileupload'),
+        cors = require('cors'),
         port = process.env.PORT || 4000;
-
+        app.use(cors());
         app.use(methodOverride('_method'));
         app.use(fileupload());
         app.use(bodyParser.urlencoded({extended:true}));
@@ -36,50 +37,24 @@ app.get('/',(req,res)=>{
 });
 
 //requiring other routes
-const   departmentsRoutes = require('./routes/departments');
+const   departmentsRoutes = require('./routes/departments'),
+        studentRoutes     = require('./routes/students');
 
 app.use('/departments',departmentsRoutes);
-
+app.use('/students',studentRoutes);
+app.get('/fetch',(req,res)=>{
+    console.log(req.headers.host);
+    ob = {
+        Dept_name: 'Bio Technology'
+        // Year : '2016-17'
+    }
+    db.query('select * from Departments where ?',ob,(err,rows,fields)=>{
+        if(err) console.log(err);
+        // console.log(rows);
+        res.send(rows);
+    })
+})
 
 app.listen(port,function(){
     console.log('app started');
 });
-
-// router.get('/:dept_name',async (req,res)=>{
-//     // +"'"+req.params.dept_name+"'";
-
-//      var qry = 'Select * from Departments where dept_name = ?';
-//      var name = [];
-//     await db.query(qry,req.params.dept_name,(err,rows,fields)=>{
-//         if(err){
-//         console.log(err);
-//         res.redirect('/');
-//         }
-//         else{
-//         for (var i  = 0;i < rows.length;i++){
-//             name[i] = rows[i].Dept_name;
-//             delete rows[i].Dept_name;
-//         }
-//         var details = rows;
-//         // console.log(research)
-//         qry = 'select * from from_host_institution where dept_name=?';
-//         var host = [];
-//         db.query(qry,req.params.dept_name,(err,rows1,fields)=>{ host = rows1;
-
-//         var other = [];
-//         var qry1 = 'select * from from_other_institution where dept_name=?';
-//         db.query(qry1,req.params.dept_name,(err,rows2,fields)=>{
-//             other = rows2;
-//             details['host'] = host;
-//             details['other']=other;
-//             console.log(details);
-//             res.render('departments/department',{details:details,name:name[0],dept_name:req.params.dept_name,host:host,other:other});
-
-
-//         });
-
-//     });
-//         }
-//     });
-    
-// });

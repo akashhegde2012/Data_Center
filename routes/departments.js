@@ -2,6 +2,7 @@ const   express = require('express'),
         router = express.Router();
         connect = require('../models/db_connect');
         db = connect(),
+        dfd = require('danfojs-node'),
         xlsx = require('xlsx');
 
 router.get('/',async (req,res)=>{
@@ -9,7 +10,7 @@ router.get('/',async (req,res)=>{
     // req.session.facultyId = auth;
     var qry = 'SELECT distinct dept_name from Departments';
    await db.query(qry,(err,rows,fields)=>{
-        console.log(rows);
+        // console.log(rows);
         // console.log(fields);
         res.render('departments/index',{departments:rows});
     });
@@ -31,7 +32,18 @@ router.get('/:dept_name',async (req,res)=>{
             delete rows[i].Dept_name;
         }
         // console.log(research)
+        // var df = new dfd.DataFrame(rows);
+        // console.log(rows);
+        // rows.forEach(row=>{
+        //     for(item in row){
+        //         item = item.replace(/_/g,' ');
+        //         console.log(item);
+        //     }
+        //     console.log('----------------------------------------');
+        //     console.log(item[0]);
+        // })
         res.render('departments/department',{details:rows,name:name[0],research:false,dept_name:req.params.dept_name});
+        res.end(rows);
         }
     });
     
@@ -49,6 +61,10 @@ router.post('/:dept_name',async (req,res,next)=>{
     var wb1 = xlsx.readFile('./upload/'+filename);
     var ws1 = wb1.Sheets.Sheet1;
     var data1 = xlsx.utils.sheet_to_json(ws1);
+    Dept_name = req.params.dept_name;
+    data1.forEach( data => {
+        data.Dept_name = Dept_name;
+    });
     console.log(data1);
     var sql=`insert into Departments set ?`;    
         data1.forEach(obj=>{
@@ -57,7 +73,7 @@ router.post('/:dept_name',async (req,res,next)=>{
                 console.log(err);
             });
         });
-        res.redirect('/departments');
+        res.redirect('/departments/'+Dept_name);
 });
 router.get('/:dept_name/research',(req,res)=>{
     var qry = 'select * from from_host_institution where dept_name=?';

@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="/stylesheet/index.css">
 
 <div class="content">
-    <table>
+    <!-- <table>
         <tr>
             <th class="sl">Sl No</th>
             <th class="name">Department Name</th>
@@ -15,7 +15,15 @@
             <td class="link"><a class="a" href="/departments/<%=departments[i].dept_name%>">More</a></td>
         </tr>
         <%}%>
-       </table>
+       </table> -->
+       <% for(var i=0;i< departments.length;i++){%>
+       <div class="cards">
+                <div class="sl items"><%=i+1%></div>
+                <div class="name items"><%=departments[i].dept_name%></div>
+                <div class="link items"><a class="a" href="/departments/<%=departments[i].dept_name%>">More</a></div>
+       </div>
+       <%}%>
+
 </div>
 
 <%- include("../partials/footer") %>

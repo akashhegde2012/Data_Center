@@ -1,0 +1,68 @@
+<%- include("../partials/header") %>
+<link rel="stylesheet" href="/stylesheet/studentLayout.css" />
+<link rel="stylesheet" href="/stylesheet/card.css" />
+<link rel="stylesheet" href="/stylesheet/students/outgoing.css">
+<div class="content">
+  <div class="container">
+    <form action="/students/outgoing" method="GET">
+      <label for="Year">Select Year</label>
+      <select name="Year" id="Year">
+        <option value="">Select</option>
+        <% years.forEach(year=>{%>
+        <option value="<%=year%>"><%=year%></option>
+        <%}) %>
+      </select>
+      <label for="type">Select graduation</label>
+      <select name="type" id="type" onchange="ugorpg()">
+        <option value="">Select</option>
+        <option value="UG">UG</option>
+        <option value="PG">PG</option>
+      </select>
+      <label for="UG" class="ug">Select Branch</label>
+      <select name="branch" id="UG" class="ug">
+        <option value="">Select</option>
+        <option value="AT">AT</option>
+        <option value="CS">CS</option>
+        <option value="EC">EC</option>
+        <option value="EE">EE</option>
+        <option value="IS">IS</option>
+        <option value="BT">BT</option>
+        <option value="CV">CV</option>
+        <option value="ME">ME</option>
+        <option value="ML">ML</option>
+        <option value=""></option>
+      </select>
+      <label for="PG" class="pg">Select Branch</label>
+      <select name="branch" id="PG" class="pg">
+        <option value="">Select</option>
+        <option value="BBT">BBT</option>
+        <option value="SSE">SSE</option>
+        <option value="LDC">LDC</option>
+        <option value="MCA">MCA</option>
+        <option value="MBA">MBA</option>
+      </select>
+      <button>submit</button>
+    </form>
+    <% if(students.length>0){%>
+        <table class="example-table">
+            <tr class="heading">
+                <td>Year</td>
+                <td>name</td>
+                <td>number</td>
+            </tr>
+            <% students.forEach(student=>{%>
+                <tr>
+                    <td><%=student.Year%></td>
+                    <td><%=student.Name_of_students%></td>
+                    <td><%=student.Roll_number%></td>
+                </tr>
+            <%})%>
+        </table>
+        <button id="generateExcel">Download</button>
+    <%}%>
+  </div>
+</div>
+<script src="/javascript/outgoing.js"></script>
+<script src="/javascript/excel.js"></script>
+
+<%- include("../partials/footer") %>

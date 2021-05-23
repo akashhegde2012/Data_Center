@@ -1,38 +1,91 @@
-body{
+/* body{
+    background: #fbe8a6;
+
     font-family: 'Roboto';
     font-weight: 300;
-}
+} */
 .heading{
     border: 3px solid blueviolet;
+    font-weight: 700;
 }        
-td{
+/* td{
     border: 3px solid black;
     padding-left: 1em;
 }
 table{
-
-border: 10px solid blueviolet;
+    background-color: #f4976c;
+    width: 80vw;
+    margin-left: 3em;
+    overflow-x: scroll;
+border: 10px solid rgba(137, 43, 226, 0.493);
 border-collapse: collapse;
 box-shadow: 1em 1em 1em -0.4em grey;
 
-}
-
-button{
-    background-color: #151b29;
-    color: yellow;
-    border:2px solid yellow;
+} */
+table{
+    background-color: #f4976c;
     width: 100%;
+    padding: 2em;
+    border-collapse: collapse;
+    box-shadow: 1em 1em 1em -0.4em grey;
+
+}
+table th,table td{
+    /* padding: 0.2 2rem; */
+    padding-left: 2em;
+    border: 2px solid black;
+    /* font-size: 1.25em; */
+}
+table .heading{
+    width: 20em;
+    background: #303c6c;
+    color: white;
+}
+@media(max-width:1224px){
+    table, table tbody, table tr,table .heading, table td{
+        font-size:0.8rem;
+    }
+    button{
+        font-size: 0.7rem;
+    }
+}
+@media(max-width:1024px){
+    table, table tbody, table tr,table .heading, table td{
+        font-size:0.7rem;
+    }
+    button{
+        font-size: 0.6rem;
+    }
+}
+@media(max-width:824px){
+    table, table tbody, table tr,table .heading, table td{
+        font-size:0.6rem;
+    }
+}
+@media(max-width:600px){
+    table, table tbody, table tr,table .heading, table td{
+        display: block;
+        width: 97%;
+    }
+    table tr{
+        margin-bottom: 2em;
+    }
+}
+button{
+    /* margin-left: 3.1em; */
+    background-color: #d2fdff;
+    border:2px solid #303c6c;
+    width: 10em;
     font-size: 0.9em;
     padding: 0.5em 1em;
     outline: none;
-    border-radius: 0px;
+    border-radius: 10px;
     transition: border-color 0.2s , transform 0.2s, box-shadow 0.2s, color 0.2s;
 }
 button:hover{
-    color: whitesmoke;
     transform: translateY(-2px);
-    border-color: greenyellow;
-    box-shadow: 0 0.5em 0.5em -0.4em greenyellow;
+    border-color: #303faf;
+    box-shadow: 0 0.5em 0.5em -0.4em #303faf;
     cursor: pointer;
 }
 button:active{
@@ -41,8 +94,14 @@ button:active{
 
 
 .content{
-    width: 85%;
+    width: 85vw;
     position: absolute;
     top: 7.5em;
-    left: 15em;
+    left: 12em;
+    /* border-left: 3px solid blue; */
+    margin-bottom: 2em;
+}
+h3.heading{
+    border: none;
+    /* margin-left: 3em; */
 }

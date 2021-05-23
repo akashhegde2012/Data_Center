@@ -1,0 +1,35 @@
+form {
+    font-size: 1.5em;
+    color: white;
+    background: #303c6c;
+    padding: 1em 1em;
+  }
+  .container {
+    border-collapse: collapse;
+    box-shadow: 1em 1em 1em -0.4em grey;
+    margin-left: 20%;
+    margin-right: 20%;
+    background: #f4976c;
+  }
+  .ug {
+    display: none;
+  }
+  .pg {
+    display: none;
+  }
+  .heading{
+      font-weight: 700;
+      font-size: 1.5rem;
+  }
+  td{
+      width: 30rem;
+    border: 3px solid black;
+    padding-left: 1em;
+}
+table{
+    background-color: #f4976c;
+    /* background-color: white; */
+border-collapse: collapse;
+box-shadow: 1em 1em 1em -0.4em grey;
+
+}

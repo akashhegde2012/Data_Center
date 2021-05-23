@@ -4,11 +4,14 @@
 
 <div class="content">
     <table class="transpose example-table1" id="example-table">
-        <tr>
+        <thead>
+        <th>
             <% for (var heading in details[0]){%>
             <td class="heading"><%=heading%></td>
             <%}%>
-        </tr>
+        </th>
+        </thead>
+        <tbody>
         <%details.forEach((detail)=>{%>
         <tr>
             <%for (const heading in detail){%>
@@ -19,18 +22,21 @@
             </td>
             <%}%>
         </tr>
+    </tbody>
+
         <%})%>
     </table>
-</div>
-<br>
-<!-- <div>
-    <button id="generateExcel">Download</button>
-    <a href="/departments/<%=dept_name%>/new"><button>Insert</button></a>
+    <br>
+<div>
+    <button id="generateExcel1">Download</button>
+    <!-- <a href="/departments/<%=dept_name%>/new"><button>Insert</button></a>
     <a href="/departments/<%=dept_name%>/research"><button>research</button></a>
-    <a href="/departments"><button>Departments</button></a>
+    <a href="/departments"><button>Departments</button></a> -->
     
 
-</div> -->
+</div>
+</div>
+
 <script src="/javascript/transpose.js"></script>
 <script src="/javascript/downloadExcel.js" ></script>
 <%- include("../partials/footer") %>

@@ -3,11 +3,16 @@
 
 <link rel="stylesheet" href="/stylesheet/details.css">
 
-
+<style>
+    .form{
+        display: flex;
+        justify-content: center;
+    }
+</style>
 <div class="content">
-    <form action="/departments/<%=dept_name%>" method="POST" enctype="multipart/form-data">
+    <form class="form" action="/departments/<%=dept_name%>" method="POST" enctype="multipart/form-data">
         <input type="file" name="excel">
-            <input type="submit">
+            <button>Submit</button>
     
     </form>
     
