@@ -2,7 +2,6 @@ const   express = require('express'),
         router = express.Router();
         connect = require('../models/db_connect');
         db = connect(),
-        dfd = require('danfojs-node'),
         xlsx = require('xlsx');
 
 router.get('/',(req,res)=>{

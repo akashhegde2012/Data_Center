@@ -61,6 +61,10 @@ table .heading{
     table, table tbody, table tr,table .heading, table td{
         font-size:0.6rem;
     }
+    .content{
+        border:none;
+        padding-left: 0;
+    }
 }
 @media(max-width:600px){
     table, table tbody, table tr,table .heading, table td{
@@ -70,6 +74,7 @@ table .heading{
     table tr{
         margin-bottom: 2em;
     }
+    
 }
 button{
     /* margin-left: 3.1em; */
@@ -94,14 +99,16 @@ button:active{
 
 
 .content{
-    width: 85vw;
+    width:75rem;
+    max-width: 80%;
     position: absolute;
     top: 7.5em;
     left: 12em;
-    /* border-left: 3px solid blue; */
+    padding-left: 1.5rem;
+    border-left: 3px solid #303c6c;
     margin-bottom: 2em;
 }
-h3.heading{
+h2.heading{
     border: none;
     /* margin-left: 3em; */
 }

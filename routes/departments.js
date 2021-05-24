@@ -2,7 +2,6 @@ const   express = require('express'),
         router = express.Router();
         connect = require('../models/db_connect');
         db = connect(),
-        dfd = require('danfojs-node'),
         xlsx = require('xlsx');
 
 router.get('/',async (req,res)=>{
@@ -19,34 +18,32 @@ router.get('/',async (req,res)=>{
 router.get('/:dept_name',async (req,res)=>{
     // +"'"+req.params.dept_name+"'";
 
-     var qry = 'Select * from Departments where dept_name = ?';
-     var name = [];
-    await db.query(qry,req.params.dept_name,(err,rows,fields)=>{
-        if(err){
-        console.log(err);
-        res.redirect('/');
-        }
-        else{
-        for (var i  = 0;i < rows.length;i++){
-            name[i] = rows[i].Dept_name;
-            delete rows[i].Dept_name;
-        }
-        // console.log(research)
-        // var df = new dfd.DataFrame(rows);
-        // console.log(rows);
-        // rows.forEach(row=>{
-        //     for(item in row){
-        //         item = item.replace(/_/g,' ');
-        //         console.log(item);
-        //     }
-        //     console.log('----------------------------------------');
-        //     console.log(item[0]);
-        // })
-        res.render('departments/department',{details:rows,name:name[0],research:false,dept_name:req.params.dept_name});
-        res.end(rows);
-        }
-    });
-    
+    //  var qry = 'Select * from Departments where dept_name = ?';
+    //  var name = [];
+    // await db.query(qry,req.params.dept_name,(err,rows,fields)=>{
+    //     if(err){
+    //     console.log(err);
+    //     res.redirect('/');
+    //     }
+    //     else{
+    //     for (var i  = 0;i < rows.length;i++){
+    //         name[i] = rows[i].Dept_name;
+    //         delete rows[i].Dept_name;
+    //     }
+    //     }
+    // });
+    const fet = async()=>{
+            var department=req.params.dept_name;
+            var table = 'Departments'
+            const res = await axios.get('/api/department',{params:{department,table}})
+            return res.data;
+    	}
+    var details = await fet();
+	for (detail of details){
+        delete detail.Dept_name;
+    }
+    res.render('departments/department',{details:details,research:false,dept_name:req.params.dept_name});
+
 });
 
 router.get('/:dept_name/new',async(req,res)=>{
@@ -75,19 +72,28 @@ router.post('/:dept_name',async (req,res,next)=>{
         });
         res.redirect('/departments/'+Dept_name);
 });
-router.get('/:dept_name/research',(req,res)=>{
-    var qry = 'select * from from_host_institution where dept_name=?';
-    var host = [];
-    db.query(qry,req.params.dept_name,(err,rows,fields)=>{ host = rows;
+router.get('/:dept_name/research',async(req,res)=>{
+    // var qry = 'select * from from_host_institution where dept_name=?';
+    // var host = [];
+    // db.query(qry,req.params.dept_name,(err,rows,fields)=>{ host = rows;
 
-        var other = [];
-        var qry1 = 'select * from from_other_institution where dept_name=?';
-        db.query(qry1,req.params.dept_name,(err,rows1,fields)=>{
-            other = rows1;
-            res.render('departments/research',{host:host,other:other,research:true,dept_name:req.params.dept_name});
+    //     var other = [];
+    //     var qry1 = 'select * from from_other_institution where dept_name=?';
+    //     db.query(qry1,req.params.dept_name,(err,rows1,fields)=>{
+    //         other = rows1;
+    //         res.render('departments/research',{host:host,other:other,research:true,dept_name:req.params.dept_name});
 
-        });
+    //     });
 
-    });
+    // });
+    const fet = async(tableName)=>{
+        var department=req.params.dept_name;
+        var table = tableName;
+        const res = await axios.get('/api/department',{params:{department,table}})
+        return res.data;
+    }
+    var host = await fet('from_host_institution');
+    var other = await fet('from_other_institution');
+    res.render('departments/research',{host:host,other:other,research:true,dept_name:req.params.dept_name});
 });
 module.exports = router;
