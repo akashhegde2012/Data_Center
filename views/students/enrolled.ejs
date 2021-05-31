@@ -5,7 +5,7 @@
 
 <div class="content">
     <div class="container">
-      <form action="/students/exam" method="GET">
+      <form action="/students/enrolled" method="GET">
         <label for="Year">Select Year</label>
         <select name="Year" id="Year">
           <option value="">Select</option>
@@ -50,7 +50,7 @@
           <tr class="heading">
               <td>Year</td>
               <td>Name</td>
-              <td>Date of exam</td>
+              <td>Date of enrollment</td>
               <td>Roll Number</td>
           </tr>
         </thead>
@@ -59,7 +59,7 @@
               <tr>
                   <td><%=student.Year%></td>
                   <td><%=student.Name_of_students%></td>
-                  <td><%=student.Date_of_appearing_in_exam%></td>
+                  <td><%=student.Date_of_enrollment%></td>
                   <td><%=student.Roll_number%></td>
               </tr>
           <%})%>

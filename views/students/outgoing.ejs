@@ -9,7 +9,7 @@
       <select name="Year" id="Year">
         <option value="">Select</option>
         <% years.forEach(year=>{%>
-        <option value="<%=year%>"><%=year%></option>
+        <option value="<%=year.Year%>"><%=year.Year%></option>
         <%}) %>
       </select>
       <label for="type">Select graduation</label>
@@ -47,10 +47,10 @@
         <table class="example-table">
             <tr class="heading">
                 <td>Year</td>
-                <td>name</td>
-                <td>number</td>
+                <td>Name</td>
+                <td>Number</td>
             </tr>
-            <% students.forEach(student=>{%>
+            <% students.forEach(student=>{;%>
                 <tr>
                     <td><%=student.Year%></td>
                     <td><%=student.Name_of_students%></td>

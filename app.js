@@ -9,6 +9,7 @@ const   express = require('express'),
         axios = require('axios'),
         fileupload = require('express-fileupload'),
         cors = require('cors'),
+        json2xls = require('json2xls'),
         fetch=require('node-fetch');
         port = process.env.PORT || 4000;
         app.use(cors());
@@ -16,6 +17,7 @@ const   express = require('express'),
         app.use(fileupload());
         app.use(bodyParser.urlencoded({extended:true}));
         app.set('view engine','ejs');
+        app.use(json2xls.middleware);
         app.use(express.static('public'));
         app.use(require('express-session')(
             {
@@ -27,19 +29,27 @@ const   express = require('express'),
 //setting base url for api 
 axios.defaults.baseURL = 'http://localhost:4000';
 // remove auth to use without old data center
-var auth;
+var auth = 'admin';
 app.post('/',(req,res)=>{
-
+    
+    if(req.body.authType)
     auth = req.body.authType;
-    req.session.facultyId = auth;
     res.redirect('/');
 });
+
+app.use((req,res,next)=>{
+
+    req.session.facultyId = auth;
+    res.locals.currentUser =auth;
+    next();
+});
+
 app.get('/',(req,res)=>{
-    console.log(auth);
     res.render('index');
 
 });
 
+const { middleware } = require('json2xls');
 //requiring other routes
 const   departmentsRoutes = require('./routes/departments'),
         apiRoutes         = require('./api/departmentApi'),

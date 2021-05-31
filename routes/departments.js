@@ -1,9 +1,10 @@
+const RouteControll = require('./controllers');
+
 const   express = require('express'),
         router = express.Router();
         connect = require('../models/db_connect');
         db = connect(),
         xlsx = require('xlsx');
-
 router.get('/',async (req,res)=>{
     // auth = req.params.auth;
     // req.session.facultyId = auth;
@@ -34,14 +35,16 @@ router.get('/:dept_name',async (req,res)=>{
     // });
     const fet = async()=>{
             var department=req.params.dept_name;
-            var table = 'Departments'
-            const res = await axios.get('/api/department',{params:{department,table}})
+            var table = 'Departments';
+            var column = '*';
+            const res = await axios.get('/api/department',{params:{department,table,column}})
             return res.data;
     	}
     var details = await fet();
 	for (detail of details){
         delete detail.Dept_name;
     }
+    // res.xls('file.xlsx',details);
     res.render('departments/department',{details:details,research:false,dept_name:req.params.dept_name});
 
 });
@@ -89,7 +92,8 @@ router.get('/:dept_name/research',async(req,res)=>{
     const fet = async(tableName)=>{
         var department=req.params.dept_name;
         var table = tableName;
-        const res = await axios.get('/api/department',{params:{department,table}})
+        var column = '*';
+        const res = await axios.get('/api/department',{params:{department,table,column}})
         return res.data;
     }
     var host = await fet('from_host_institution');
