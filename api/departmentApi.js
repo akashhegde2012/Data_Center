@@ -122,4 +122,16 @@ router.get('/other',async (req,res)=>{
             res.status(201).json(rows);  
     });
 });
+router.get('/login',async(req,res)=>{
+    const email = req.query.email;
+    const table = 'administrator_login';
+    const select = 'select * ';
+    const from = ' from '+ table;
+    const where = ' where emailId = ?';
+    var qry = select+from+where;
+    console.log(email);
+    await db.query(qry,email,(err,rows)=>{
+        res.json(rows[0]);
+    });
+});
 module.exports = router;

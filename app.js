@@ -29,23 +29,24 @@ const   express = require('express'),
 //setting base url for api 
 axios.defaults.baseURL = 'http://localhost:4000';
 // remove auth to use without old data center
-var auth = 'admin';
-app.post('/',(req,res)=>{
+// var auth = 'admin';
+// app.post('/',(req,res)=>{
     
-    if(req.body.authType)
-    auth = req.body.authType;
-    res.redirect('/');
-});
+//     if(req.body.authType)
+//     auth = req.body.authType;
+//     res.redirect('/');
+// });
 
 app.use((req,res,next)=>{
 
-    req.session.facultyId = auth;
+    var auth = req.session.authType
     res.locals.currentUser =auth;
     next();
 });
 
 app.get('/',(req,res)=>{
-    res.render('index');
+
+        res.render('index');
 
 });
 
@@ -56,7 +57,9 @@ const   departmentsRoutes           = require('./routes/departments'),
         excelApiRoutes              =require('./api/excelApi'),
         studentRoutes               = require('./routes/students'),
         teacherRoutes               =require('./routes/teachers'),
+        loginRoutes                 =require('./routes/login'),
         institutionRoutes           =require('./routes/institution');
+        
 
 app.use('/departments',departmentsRoutes);
 app.use('/students',studentRoutes);
@@ -64,7 +67,7 @@ app.use('/api',departmentApiRoutes);
 app.use('/excel',excelApiRoutes);
 app.use('/teachers',teacherRoutes);
 app.use('/institution',institutionRoutes);
-
+app.use('/login',loginRoutes);
 // app.get('/query',async (req,res)=>{
 //     const fetchs=async ()=>{
 //         const res = await fetch('http://localhost:4000/fetch');
