@@ -16,10 +16,10 @@ body{
 nav{
     height: 5em;
     width: 100%;
-    background: #303c8c;
-    /* background: repeating-linear-gradient(
-        -45deg,#303c6c 0 1rem, #162870 1rem 2rem
-    ); */
+    background: #303c6c; 
+    /*background: repeating-linear-gradient(
+        -45deg,#303c6c 0 1rem, #162870 1rem 2rem*/
+    );
     position: fixed;
     z-index: 1;
     overflow: hidden;
@@ -33,11 +33,12 @@ label.logo{
 nav ul{
     float: right;
     margin-right: 2em;
+    font-weight: bold;
 }
 nav li{
 
     display: inline-block;
-    margin: 0 0.25em;
+    margin: 0 0.35em;
     line-height: 5em;
 }
 nav a{
@@ -49,20 +50,11 @@ nav a{
     padding: 0.5em;
     border-radius: 0.5em;
 }
-ul .pagename{
-    position: absolute;
-    left:300px;
-    /* margin-right: 80em; */
-    float: left;
-    font-size: 30px;
-    color:white;
-    font-weight: 700;
-}
 nav #icon{
 display: none;
 }
 a.active,.act:hover{
-border: 1px solid white;
+border: 0.2em solid rgb(3, 3, 3);
 background-color: rgba(255, 255, 255, 0);
 transition: .5s;
 }
