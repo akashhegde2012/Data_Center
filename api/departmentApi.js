@@ -49,7 +49,7 @@ router.post('/research',async (req,res)=>{
     const {research,table}=req.body;
     const qry = 'insert into '+table+' set ?';
     await db.query(qry,research,(err,rows)=>{
-        res.status(201);
+        res.end();
     });
 });
 
