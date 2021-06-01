@@ -1,0 +1,97 @@
+<%- include("../partials/header") %>
+<%- include("../partials/institutionSidebar") %>
+
+<link rel="stylesheet" href="/stylesheet/Layout.css" />
+<link rel="stylesheet" href="/stylesheet/card.css" />
+<link rel="stylesheet" href="/stylesheet/students/outgoing.css">
+<style>
+  table thead{
+    font-weight: 700;
+    color: white;
+    font-size: 1.5em;
+    background-color: #3c3c6c;
+  }
+  .type{
+    font-size: 1.5em;
+    color: white;
+    background: #303c6c;
+    padding: 1em 1em;
+  }
+  .container{
+      margin-bottom: 30px;
+  }
+</style>
+<div class="content">
+  <div class="container">
+      <div class="type">Eligible applications received for admissions</div>
+    <table>
+        <thead>
+            <tr>
+                <td>Year</td>
+                <td>Number of Eligible applications</td>
+                <td>Supporting Document</td>
+            </tr>
+        </thead>
+        <tbody>
+            <%applications.forEach((application)=>{%>
+                <tr>
+                    <td><%=application.Year%></td>
+                    <td><%=application.Number_of_eligible_applications_received_for_admissions%></td>
+                    <td><a target="_blank" href="<%=application.Upload_supporting_document%>">View the Supporting documents</a></td>
+
+                </tr>
+            <%})%>
+        </tbody>
+    </table>
+
+  </div>
+  <div class="container">
+    <div class="type">Number of sanctioned posts</div>
+  <table>
+      <thead>
+          <tr>
+              <td>Year</td>
+              <td>Number of Sanctioned posts</td>
+              <td>Supporting Document</td>
+          </tr>
+      </thead>
+      <tbody>
+          <%sanctioned.forEach((application)=>{%>
+              <tr>
+                  <td><%=application.Year%></td>
+                  <td><%=application.Number_of_sanctioned_posts_year%></td>
+                  <td><a target="_blank" href="<%=application.Upload_supporting_document%>">View the Supporting documents</a></td>
+
+              </tr>
+          <%})%>
+      </tbody>
+  </table>
+
+</div>
+<div class="container">
+    <div class="type">Seats earmarked for reserved category</div>
+  <table>
+      <thead>
+          <tr>
+              <td>Year</td>
+              <td>Number of Sanctioned posts</td>
+              <td>Supporting Document</td>
+          </tr>
+      </thead>
+      <tbody>
+          <%reserved.forEach((application)=>{%>
+              <tr>
+                  <td><%=application.Year%></td>
+                  <td><%=application['Number_of_seats_earmarked_for_reserved_category(State_Govt_rule)']%></td>
+                  <td><a target="_blank" href="<%=application.Upload_supporting_document%>">View the Supporting documents</a></td>
+
+              </tr>
+          <%})%>
+      </tbody>
+  </table>
+
+</div>
+</div>
+<script src="/javascript/excel.js"></script>
+
+<%- include("../partials/footer") %>

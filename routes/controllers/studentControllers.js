@@ -1,4 +1,3 @@
-const { Router } = require("express");
 
 var RouteControll = {};
 RouteControll.getOutgoing =async (req,res)=>{

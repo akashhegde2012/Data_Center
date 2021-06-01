@@ -1,5 +1,5 @@
 const { default: axios } = require('axios');
-const RouteControll = require('./controllers');
+const RouteControll = require('./controllers/studentControllers');
 
 const   express = require('express'),
         router = express.Router();

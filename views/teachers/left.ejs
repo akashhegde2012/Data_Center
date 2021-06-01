@@ -1,0 +1,37 @@
+<%- include("../partials/header") %>
+<%- include("../partials/teacherSidebar") %>
+
+<link rel="stylesheet" href="/stylesheet/Layout.css" />
+<link rel="stylesheet" href="/stylesheet/teachers.css">
+<div class="content">
+    <div class="container">
+        <table class="example-table">
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Id (Aadhar number)</td>
+                    <td>Email</td>
+                    <td>Gender</td>
+                    <td>Date of Joining</td>
+                    <td>Date of Leaving</td>
+                </tr>
+            </thead>
+            <tbody>
+                <%teachers.forEach(teacher=>{%>
+                    <tr>
+                        <td><%=teacher.Name%></td>
+                        <td><%=teacher['ID_number/Aadhar_number(Not mandatory)']%></td>
+                        <td><%=teacher.Email%></td>
+                        <td><%=teacher.Designation%></td>
+                        <td><%=teacher.Date_of_joining%></td>
+                        <td><%=teacher.Date_of_leaving%></td>
+
+                    </tr>    
+                    
+                <%})%>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<%- include("../partials/footer") %>

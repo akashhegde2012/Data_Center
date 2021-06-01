@@ -4,7 +4,6 @@ const   express = require('express'),
         mysql=require('mysql'),
         methodOverride = require('method-override'),
         connect = require('./models/db_connect'),
-        db = connect(),
         xlsx        = require('xlsx'),
         axios = require('axios'),
         fileupload = require('express-fileupload'),
@@ -19,6 +18,7 @@ const   express = require('express'),
         app.set('view engine','ejs');
         app.use(json2xls.middleware);
         app.use(express.static('public'));
+        app.use(bodyParser.json());
         app.use(require('express-session')(
             {
                 secret:"new sectet",
@@ -51,25 +51,20 @@ app.get('/',(req,res)=>{
 
 const { middleware } = require('json2xls');
 //requiring other routes
-const   departmentsRoutes = require('./routes/departments'),
-        apiRoutes         = require('./api/departmentApi'),
-        studentRoutes     = require('./routes/students');
+const   departmentsRoutes           = require('./routes/departments'),
+        departmentApiRoutes         = require('./api/departmentApi'),
+        excelApiRoutes              =require('./api/excelApi'),
+        studentRoutes               = require('./routes/students'),
+        teacherRoutes               =require('./routes/teachers'),
+        institutionRoutes           =require('./routes/institution');
 
 app.use('/departments',departmentsRoutes);
 app.use('/students',studentRoutes);
-app.use('/api',apiRoutes);
-// app.get('/fetch',(req,res)=>{
-//     console.log(req.query);
-//     ob = {
-//         Dept_name: 'Bio Technology'
-//         // Year : '2016-17'
-//     }
-//     db.query('select * from Departments where Dept_name = ?',req.query.department,(err,rows,fields)=>{
-//         if(err) console.log(err);
-//         // console.log(rows);
-//         res.send(rows);
-//     })
-// })
+app.use('/api',departmentApiRoutes);
+app.use('/excel',excelApiRoutes);
+app.use('/teachers',teacherRoutes);
+app.use('/institution',institutionRoutes);
+
 // app.get('/query',async (req,res)=>{
 //     const fetchs=async ()=>{
 //         const res = await fetch('http://localhost:4000/fetch');
@@ -79,16 +74,7 @@ app.use('/api',apiRoutes);
 //     var x = await fetchs();
 //     console.log(x);
 // })
-// app.get('/getdata',async (req,res)=>{
-//     const fet = async()=>{
-//         var department='Computer Science And Engineering';
-//         var table = 'Departments'
-//     	const res = await axios.get('http://localhost:4000/api/fetch',{params:{department:department,table:table}})
-//     	return res.data;
-//     	}
-//     var a = await fet();
-// 	console.log(a);
-// })
+
 app.listen(port,function(){
     console.log('app started');
 });

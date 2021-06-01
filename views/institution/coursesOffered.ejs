@@ -1,0 +1,65 @@
+<%- include("../partials/header") %>
+<%- include("../partials/institutionSidebar") %>
+
+<link rel="stylesheet" href="/stylesheet/Layout.css" />
+<link rel="stylesheet" href="/stylesheet/card.css" />
+<link rel="stylesheet" href="/stylesheet/students/outgoing.css">
+<style>
+  table thead{
+    font-weight: 700;
+    color: white;
+    font-size: 1.5em;
+    background-color: #3c3c6c;
+  }
+  thead tr td{
+    padding: 10px;
+  }
+</style>
+<div class="content">
+  <div class="container">
+    <form action="/institution/courses" method="GET">
+      <label for="program">Select program</label>
+      <select name="program" id="program">
+        <option value="">Select</option>
+        <% programs.forEach(program=>{%>
+        <option value="<%=program.Program_name%>"><%=program.Program_name%></option>
+        <%}) %>
+      </select>
+      <button>submit</button>
+      <% if(courses.length>0){%>
+      <button type="button" id="generateExcel">Download</button>
+      <%}%>
+
+    </form>
+
+    <% if(courses.length>0) {%>
+        <table class="example-table">
+            <thead>
+                <tr>
+                    <td>Program Name</td>
+                    <td>Name</td>
+                    <td>Course Code</td>
+                    <td>Course Name</td>
+                    <td>Year of offering</td>
+                </tr>
+            </thead>
+            <tbody>
+                <% courses.forEach(course=>{%>
+                    <tr>
+                        <td><%=course.Program_name%></td>
+                        <td><%=course.Name%></td>
+                        <td><%=course.Course_code%></td>
+                        <td><%=course.Course_name%></td>
+                        <td><%=course.Year_of_offering_the_course%></td>
+                    </tr>    
+                <%})%>
+            </tbody>
+        </table>
+    <%}%>
+
+  </div>
+</div>
+<script src="/javascript/outgoing.js"></script>
+<script src="/javascript/excel.js"></script>
+
+<%- include("../partials/footer") %>

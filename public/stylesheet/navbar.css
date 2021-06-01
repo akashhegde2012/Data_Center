@@ -16,10 +16,10 @@ body{
 nav{
     height: 5em;
     width: 100%;
-    /* background: #303c6c; */
-    background: repeating-linear-gradient(
+    background: #303c8c;
+    /* background: repeating-linear-gradient(
         -45deg,#303c6c 0 1rem, #162870 1rem 2rem
-    );
+    ); */
     position: fixed;
     z-index: 1;
     overflow: hidden;
@@ -48,6 +48,15 @@ nav a{
     border: 1px solid transparent;
     padding: 0.5em;
     border-radius: 0.5em;
+}
+ul .pagename{
+    position: absolute;
+    left:300px;
+    /* margin-right: 80em; */
+    float: left;
+    font-size: 30px;
+    color:white;
+    font-weight: 700;
 }
 nav #icon{
 display: none;

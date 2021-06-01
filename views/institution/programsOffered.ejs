@@ -1,0 +1,53 @@
+<%- include("../partials/header") %>
+<%- include("../partials/institutionSidebar") %>
+
+<link rel="stylesheet" href="/stylesheet/Layout.css" />
+<link rel="stylesheet" href="/stylesheet/card.css" />
+<link rel="stylesheet" href="/stylesheet/students/outgoing.css">
+<style>
+  table thead{
+    font-weight: 700;
+    color: white;
+    font-size: 1.5em;
+    background-color: #3c3c6c;
+  }
+  .type{
+    font-size: 1.5em;
+    color: white;
+    background: #303c6c;
+    padding: 1em 1em;
+  }
+  .container{
+      margin-bottom: 30px;
+  }
+</style>
+<div class="content">
+  <div class="container">
+      <div class="type">Programs offered Year wise &nbsp;           <button id="generateExcel">Download</button>
+      </div>
+    <table class="example-table">
+        <thead>
+            <tr>
+                <td>Program Code</td>
+                <td>Program Name</td>
+                <td>Year of offering</td>
+            </tr>
+        </thead>
+        <tbody>
+            <%programs.forEach((program)=>{%>
+                <tr>
+                    <td><%=program.Program_Code%></td>
+                    <td><%=program.Program_Name%></td>
+                    <td><%=program.Year_of_offering%></td>
+
+                </tr>
+            <%})%>
+        </tbody>
+    </table>
+
+  </div>
+
+</div>
+<script src="/javascript/excel.js"></script>
+
+<%- include("../partials/footer") %>
