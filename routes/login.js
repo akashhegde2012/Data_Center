@@ -25,6 +25,10 @@ router.post('/',async(req,res)=>{
             res.redirect('/login')
         }
     }
+    else{
+        console.log('no email');
+        res.redirect('/login')
+    }
 });
 router.get('/logout',async(req,res)=>{
     console.log('logout')

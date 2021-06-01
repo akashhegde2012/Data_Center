@@ -19,23 +19,23 @@
 
 .cards{
     font-size: 1.25rem;
-    width: 340px;
+    width: 330px;
     height: 18rem;
     margin: 2rem calc(11%/8) ;
     border-radius: 5% ;
-    display: inline-block;
+    display: inline-table;
     /* background: linear-gradient(to left, #303c6c , #303faf); */
     
-    /* box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.7);
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.7);
     background-color: rgba(0, 100, 255, .5);  
-    backdrop-filter: blur(2px); */
+    backdrop-filter: blur(2px);
     background-color: rgba(0, 100, 255, .5);  
-    color:black;
-    border: 2px solid rgb(65, 65, 65);
+    /* color:black;
+    border: 2px solid rgb(65, 65, 65); */
     /* color: white; */
-    /* border: 2px solid rgb(65, 65, 65);*/
+    border: 2px solid rgb(65, 65, 65);
     text-align: center;
-    transition: border-color 0.3s , transform 0.2s, box-shadow 0.2s;
+    transition: all 0.3s;
 }
 .cards:hover{
     transform: translateY(-10px);

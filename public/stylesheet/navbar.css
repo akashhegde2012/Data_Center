@@ -19,7 +19,7 @@ nav{
     background: #303c6c; 
     /*background: repeating-linear-gradient(
         -45deg,#303c6c 0 1rem, #162870 1rem 2rem*/
-    );
+    /* ); */
     position: fixed;
     z-index: 1;
     overflow: hidden;
@@ -54,7 +54,7 @@ nav #icon{
 display: none;
 }
 a.active,.act:hover{
-border: 0.2em solid rgb(3, 3, 3);
+border-color: white;
 background-color: rgba(255, 255, 255, 0);
 transition: .5s;
 }

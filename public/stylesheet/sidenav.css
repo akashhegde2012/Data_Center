@@ -29,12 +29,11 @@
   padding: 0.5em 1em;
   outline: none;
   border-radius: 0px;
-  transition: border-color 0.2s , transform 0.2s, box-shadow 0.2s, color 0.2s;
+  transition: all 0.3s ;
 }
 .side-btn:hover{
   transform: translateY(-2px);
   border-color: #0a0301;
-  border-width: 0.3em;
   box-shadow: 0 0.4em 0.4em -0.4em #040930;
   cursor: pointer;
 }
