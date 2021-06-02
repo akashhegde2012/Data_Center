@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Center</title>
+</head>
+<script src="/javascript/table2excel.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/assets/favicon.png" type="image/gif" sizes="16x16">
+<link rel="stylesheet" href="/stylesheet/navbar.css">
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        $('#icon').click(()=>{
+            $('ul').toggleClass('show');
+        });
+    });
+</script>
+<body>
+    <div class="navbar">
+        <nav>
+            <ul class="leftnav">
+            <li><label for="" class="logo"><img id="brand" src="/assets/brand.png" alt=""></label></li>
+            <li class="navtext"><label for="text" >Text Example</label></li>
+            </ul>    
+            <ul class="rightnav">
+                    <li><a class="act" href="/"><span><img id="icons" src="/assets/home.png"></span> Home</a></li>
+                <% if(currentUser){%>
+                    <li><a href="#" class="act"> <%=currentUser %></a></li>
+                    <li><a class="act" href="/login/logout"> Logout</a></li>
+                <%} else {%>
+                    <li><a href="/login" class="act" ><span><img id="icons2" src="/assets/login.png"></span> Login</a></li>
+                <%}%>
+                <!-- <li><a class="act" href="#">Info 3</a></li> -->
+                <!-- <li><a class="act" href="#">Info 4</a></li> -->
+            </ul>
+            <label id="icon" for="">
+                <i class="fas fa-bars"></i>
+            </label>
+        </nav>
+    </div>

@@ -50,7 +50,7 @@ text-align: center;
 }
 
 body{
-    background-image:url("/assets/audi.jpg");
+    background-image:url("/assets/rit.jpeg");
     background-repeat: no-repeat;
     background-attachment:fixed;
     background-size:cover; 
@@ -75,4 +75,17 @@ list-style: none;
     padding-right: 5px;
   } 
 
-  
+#icons{
+    width: 30px;
+    height: 30px;
+    top: 7px;
+    position: relative;
+    display: inline;
+}
+#icons2{
+    width: 30px;
+    height: 30px;
+    top: 10px;
+    position: relative;
+    display: inline;
+}

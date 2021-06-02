@@ -115,3 +115,21 @@ transition: .5s;
     width :7em;
     height: 2.5em;
 }
+
+.navtext{
+    font-size: 1.5em;
+    color: white;
+    background-color: initial;
+    text-align:start;
+    position: fixed;
+    padding-left: 2.5em;
+    align-content: center;
+    top: -15px;
+}
+
+.leftnav{
+    float: left;
+    top: 0%;
+    /* position:fixed; */
+}
+
