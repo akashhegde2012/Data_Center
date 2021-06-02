@@ -1,19 +1,60 @@
 <%- include("partials/header") %>
-<link rel="stylesheet" href="/stylesheet/home.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/stylesheet/Home.css">
 
 <div class="content">
-    <div class="homepage"><h1>Home Page</h1>
-    <br>
 
-    <div>
-    <a href="/departments/"><button>Departments</button></a><br><br>
-    <a href="/students/"><button>Students</button></a><br><br>
-    <a href="/teachers/"><button>Teachers</button></a><br><br>
-    <a href="/institution/"><button>Institution</button></a>
-    </div>
-    </div>
+<div class="headings"><h1>Home Page</h1></div>
 
+<div class="cards">
+    <div class="items">Departments</div>
+    <div class="para">
+        <ul>
+            <li>Department-wise details</li>
+            <li>Research Associates</li>
+            <li>Insert new data</li>
+        </ul>
+        
+    </div>
+    <div> <a class="a" href="/departments/">View</a></div>
+    
+</div>
+
+<div class="cards">
+    <div class="items">Students</div>
+    <div class="para">
+        <ul>
+            <li>Outgoing Students</li>
+            <li>Students appeared in exam</li> 
+            <li>Enrolled Students</li>
+        </ul>
+    </div>
+    <div> <a class="a" href="/students/">View</a></div>
+</div>
+
+<div class="cards">
+    <div class="items">Teachers</div>
+    <div class="para">
+        <ul>
+            <li>Teachers currently working</li>
+            <li>teachers who have Left </li>
+        </ul>
+    </div>
+    <div> <a class="a" href="/teachers/">View</a></div>
+</div>
+
+<div class="cards">
+    <div class="items">Institution</div>
+    <div class="para">
+        <ul>
+            <li>Courses Offered</li>
+            <li>Programs Offered</li>
+            <li>Applications received for admissions</li>
+            <li>Sanctioned Posts</li>
+            <li>Seats Earmarked</li>
+        </ul>
+    </div>
+    <div> <a class="a" href="/institution/">View</a></div>
+</div>
 
 </div>
 <%- include("partials/footer") %>

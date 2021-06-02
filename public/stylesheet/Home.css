@@ -1,0 +1,76 @@
+.content{
+    width: 85%;
+    position: absolute;
+    top: 7.5em;
+    left: 10em;
+    margin-bottom: 2em;
+    display: inline-block;
+ 
+}
+.cards{
+    font-size: 1.25rem;
+    width: 330px;
+    height: 400px;
+    margin: 2rem calc(11%/8) ;
+    display: inline-table; 
+    background-color: rgba(246, 249, 253, 0.5);  
+    border: 2px solid rgb(65, 65, 65);
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.a{
+    font-size: 1.2rem;
+    padding: 1rem 1rem;
+    color: rgb(3, 3, 3);
+    background-color: rgb(239, 237, 243);
+    border: 1px solid #000023;   
+    transition: all 0.3s;
+}
+.a:hover{
+    color: black;
+    background-color: rgb(31, 177, 31);    
+    border-width: 0.15em;
+}
+
+.headings{
+font-size: 1.75em;
+margin: auto;
+display: inline;
+text-align: center;
+}
+
+.items{
+    font-size: 2em;
+    text-decoration: underline;
+    font-weight: bold;
+    display: inline;
+}
+
+body{
+    background-image:url("/assets/audi.jpg");
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size:cover; 
+    background-position: center center;
+}
+
+ul {
+    list-style: none;
+    margin: 10%;
+  }
+  
+  li {
+    font-size: 1.5em;
+    font-weight: 500;
+    padding: 0.25em;
+    text-align: justify;
+    display: inline-block;
+  }
+  
+  li:before {
+    content: "➡";
+    padding-right: 5px;
+  }
+
+  
