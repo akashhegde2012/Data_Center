@@ -14,6 +14,8 @@
 <link rel="icon" href="/assets/favicon.png" type="image/gif" sizes="16x16">
 <link rel="stylesheet" href="/stylesheet/navbar.css">
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
 <script>
     $(document).ready(function(){
         $('#icon').click(()=>{
@@ -22,7 +24,7 @@
     });
 </script>
 <body>
-    <div class="navbar">
+    <!-- <div class="navbar">
         <nav>
             <label for="" class="logo"><img id="brand" src="/assets/brand.png" alt=""></label>
             <ul>
@@ -33,11 +35,32 @@
                 <%} else {%>
                     <li><a href="/login" class="act" >Login</a></li>
                 <%}%>
-                <!-- <li><a class="act" href="#">Info 3</a></li> -->
-                <!-- <li><a class="act" href="#">Info 4</a></li> -->
+
             </ul>
             <label id="icon" for="">
                 <i class="fas fa-bars"></i>
             </label>
-        </nav>
+        </nav> -->
+        <nav class="navbar  fixed-top navbar-expand-lg navbar-dark ">
+            
+            <div class="container-fluid">
+                <img class="navbar-brand" src="/assets/brand.png" width="200" height="65">
+
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ml-auto right">
+                        <a href="/" class="act nav-item nav-link">Home</a>
+                    <% if(currentUser){%>
+                        <a href="#" class="act nav-item nav-link"> <%=currentUser %></a>
+                        <a class="act nav-item nav-link"  href="/login/logout">Logout</a>
+                    <%} else {%>
+                        <a href="/login" class="act nav-item nav-link" >Login</a>
+                    <%}%>
+                </div>
+              </div>
+            </div>
+          </nav>
     </div>

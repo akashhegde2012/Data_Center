@@ -2,7 +2,8 @@
     width: 85%;
     position: absolute;
     top: 7.5em;
-    left: 10em;
+    left: 5em;
+    margin: 50px;
     margin-bottom: 2em;
     display: inline-block;
  
@@ -35,12 +36,7 @@
     border-width: 0.1em;
 }
 
-.headings{
-font-size: 1.75em;
-margin: auto;
-display: inline;
-text-align: center;
-}
+
 
 .items{
     font-size: 2em;
@@ -88,4 +84,45 @@ list-style: none;
     top: 10px;
     position: relative;
     display: inline;
+}
+/* .container{
+    margin:20px auto;
+    padding-bottom: 20em;
+    max-width: 1500px;
+    max-height: 300px;
+}
+.square{
+    width: 20%;
+    margin-bottom: 10em;
+    max-height: 0;
+    background: white;
+    padding-bottom: 30%;
+    float: left;
+    margin: 1.66%;
+    border-radius: 5%;
+} */
+.card{
+    background-color: white;
+    margin:20px 1%;
+    height: 20rem;
+    font-size: 1.5em;
+
+}
+.card-title{
+    border-bottom: 3px solid black;
+}
+.container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+h1{
+    background-color: white;
+    color: black;
+    width:25%;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+.headings{
+    text-align: center;
 }

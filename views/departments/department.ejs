@@ -3,29 +3,36 @@
 <link rel="stylesheet" href="/stylesheet/details.css">
 
 <div class="content">
-    <table class="transpose example-table" id="example-table">
-        <thead>
-        <th>
-            <% for (var heading in details[0]){%>
-            <td class="heading"><%=heading%></td>
-            <%}%>
-        </th>
-        </thead>
-        <tbody>
-        <%details.forEach((detail)=>{%>
-        <tr>
-            <%for (const heading in detail){%>
-            <td><%if(detail[heading] === null){%>
-                Na
-                <%}%>
-                <%=detail[heading]%>
-            </td>
-            <%}%>
-        </tr>
-    </tbody>
+    <table class="table table-bordered border-primary">
 
-        <%})%>
-    </table>
+        <tbody>
+
+            <%for(const item in details[0]){%>
+                
+                    <tr>
+                        <% for (var i=0 ;i< details.length+1;i++){%>
+                            <% if (i === 0) {%>
+                                <th scope="row"><%=item%></th>
+                            <%} else{%>
+                            <td><%=details[i-1][item]%></td>    
+                            <%}%>
+                        <%}%>
+                    </tr>
+
+            <%}%>
+          <!-- <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr> -->
+        </tbody>
+      </table>
     <br>
 <div>
     <a href="/excel/<%=dept_name%>/Departments">

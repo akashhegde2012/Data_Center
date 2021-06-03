@@ -1,11 +1,45 @@
-<%- include("partials/header2") %>
+<%- include("partials/header") %>
 <link rel="stylesheet" href="/stylesheet/Home.css">
+
 
 <div class="content">
 
 <div class="headings"><h1>Home Page</h1></div>
+<div class="container">
+    
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h2 class="card-title">Dpartment</h2>
+          <h6 class="card-subtitle mb-2 text-muted"> </h6>
+          <p class="card-text">Details and information about the different activities in the department for the last 5 years.</p>
+          <a href="/departments" class="card-link btn btn-lg btn-primary">View</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h2 class="card-title">Students</h2>
+          <h6 class="card-subtitle mb-2 text-muted"></h6>
+          <p class="card-text">Student details such as students appearing in exam, enrolled year wise and outgoing students.</p>
+          <a href="/students" class="card-link btn btn-lg btn-primary">View</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h2 class="card-title">Institution</h2>
+          <p class="card-text">The institution details such as courses offered and different programs and its offering year.</p>
+          <a href="/institution" class="card-link btn btn-lg btn-primary">view</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h2 class="card-title">Teachers</h2>
+          <p class="card-text">Teacher details which has list of teachers currently working, teachers who joined or left the institution.</p>
+          <a href="/teachers" class="card-link btn btn-lg btn-primary">view</a>
+        </div>
+      </div>
 
-<div class="cards">
+</div>
+<!-- <div class="cards">
     <div class="items">Departments</div>
     <div class="para">
         <ul class="listbody">
@@ -52,7 +86,7 @@
         </ul>
     
     <div> <a class="a" href="/institution/">View</a></div>
-</div>
+</div> -->
 
 </div>
 <%- include("partials/footer") %>

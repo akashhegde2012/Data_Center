@@ -4,10 +4,10 @@
     font-family: 'Roboto';
     font-weight: 300;
 } */
-.heading{
+/* .heading{
     border: 3px solid blueviolet;
     font-weight: 700;
-}        
+}         */
 /* td{
     border: 3px solid black;
     padding-left: 1em;
@@ -22,7 +22,7 @@ border-collapse: collapse;
 box-shadow: 1em 1em 1em -0.4em grey;
 
 } */
-table{
+/* table{
 
     background-color: #f4976c;
     width: 100%;
@@ -31,18 +31,16 @@ table{
 
 }
 table th,table td{
-    /* padding: 0.2 2rem; */
     padding-left: 2em;
     border: 2px solid black;
-    /* font-size: 1.25em; */
 }
 table .heading{
     width: 20em;
     background: #303c6c;
     color: white;
-}
+} */
 @media(max-width:1224px){
-    table, table tbody, table tr,table .heading, table td{
+    .table, .table tbody, .table tr, .heading, .table td{
         font-size:0.8rem;
     }
     button{
@@ -50,7 +48,7 @@ table .heading{
     }
 }
 @media(max-width:1024px){
-    table, table tbody, table tr,table .heading, table td{
+    .table, .table tbody, .table tr, .heading, .table td{
         font-size:0.7rem;
     }
     button{
@@ -58,7 +56,7 @@ table .heading{
     }
 }
 @media(max-width:824px){
-    table, table tbody, table tr,table .heading, table td{
+    .table, .table tbody, .table tr, .heading, .table td{
         font-size:0.6rem;
     }
     .content{
@@ -73,6 +71,9 @@ table .heading{
     }
     table tr{
         margin-bottom: 2em;
+    }
+    .table th{
+        width:30rem
     }
     
 }
@@ -99,7 +100,7 @@ button:active{
 
 
 .content{
-    width:75rem;
+    width:100%;
     max-width: 80%;
     position: absolute;
     top: 7.5em;
@@ -111,4 +112,24 @@ button:active{
 h2.heading{
     border: none;
     /* margin-left: 3em; */
+}
+.table th{
+    width: 15em;
+    max-width: 100%;
+    background: #303c6c;
+    color: white;
+    padding-left: 2em;
+    border-width: 2em;
+    border: 3px solid black;
+}
+.table td{
+
+    background-color: #f4976c;
+    padding-left: 2em;
+    border-width: 2em;
+    border: 3px solid black;
+}
+.table{
+    box-shadow: 1em 1em 1em -0.4em black;
+
 }

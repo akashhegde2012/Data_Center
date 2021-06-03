@@ -4,15 +4,7 @@ form {
     background: #303c6c;
     padding: 1em 1em;
   }
-  .container {
-    border-collapse: collapse;
-    box-shadow: 1em 1em 1em -0.4em grey;
-    margin-left: 10%;
-    margin-right: 20%;
-    background: #f4976c;
-    width:70rem;
-    max-width: 90%;
-  }
+ 
   .ug {
     display: none;
   }

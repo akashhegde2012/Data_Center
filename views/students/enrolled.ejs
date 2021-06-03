@@ -22,7 +22,7 @@
           <option value="PG">PG</option>
         </select>
         <label for="UG" class="ug">Select Branch</label>
-        <select name="branch" id="UG" class="ug">
+        <select name="branch"  id="UG" class="ug">
           <option value="">Select</option>
           <option value="AT">AT</option>
           <option value="BT">BT</option>
@@ -55,10 +55,10 @@
           <option value="LVS">LVS</option>
           <option value="LAC">LAC</option>
         </select>
-        <button>submit</button>
+        <button class="btn btn-warning">submit</button>
       </form>
       <% if(students.length>0){%>
-        <table class="example-table">
+        <table class="example-table table">
         <thead>
 
           <tr class="heading">
@@ -79,7 +79,7 @@
           <%})%>
         </tbody>
           </table>
-          <button id="generateExcel">Download</button>
+          <button class="btn btn-primary" id="generateExcel">Download</button>
       <%}%>
     </div>
   </div>

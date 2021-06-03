@@ -2,11 +2,11 @@
 <link rel="stylesheet" href="/stylesheet/details.css">
 
 <style>
-    .form{
+    .container-sm{
         display: flex;
         justify-content: center;
         flex-direction: column;
-        width: 300px;
+        width: 400px;
         background-color: black;
         border-radius: 15px;
         color: white;
@@ -18,17 +18,24 @@
     }
 </style>
 <div class="content">
-    <form class="form" action="/login" method="POST" >
-        <label for="emailId">Email id: </label>
-        <input  id="emailId" type="email" name="emailId">
-        <br>
-        <label for="password">Password: </label>
-        <input type="password" name="password" id="password">
-        <br>
-            <button>Submit</button>
+    <div class="container-sm">
+        <form class="form" action="/login" method="POST" >
+            <div class="mb-3">
+                <label for="emailId" class="form-label">Email id: </label>
     
-    </form>
+                <input  id="emailId" class="form-control" type="email" name="emailId">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="password">Password: </label>
+                <input class="form-control" type="password" name="password" id="password">
     
+            </div>
+
+                <button class="btn btn-primary">Submit</button>
+        
+        </form>
+        
+    </div>
 </div>
 
 <%- include("./partials/footer") %>

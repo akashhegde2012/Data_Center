@@ -4,11 +4,11 @@
 <link rel="stylesheet" href="/stylesheet/details.css">
 
 <style>
-    .form{
+    .container-sm{
         display: flex;
         justify-content: center;
         flex-direction: column;
-        width: 300px;
+        width: 400px;
         background-color: black;
         border-radius: 15px;
         color: white;
@@ -20,28 +20,37 @@
     }
 </style>
 <div class="content">
-    <form class="form" action="/departments/<%=dept_name%>/research" method="POST" >
-        <label for="table">Table: </label>
-        <select name="table" id="table">
-            <option value="">select</option>
-            <option value="from_host_institution">Host Institution</option>
-            <option value="from_other_institution">Other Institutions</option>
-        </select>
-        <br>
-        <label for="year">Year: </label>
-        <select name="Year" id="year">
-            <option value="">select</option>
-            <% years.forEach(year=>{ %>
-                <option value="<%=year.Year%>"><%=year.Year%></option>    
-            <% })%>
-        </select>
-        <br>
-        <label for="faculty_name">Faculty Name:</label>
-        <input type="text" id="faculty_name" name='faculty_name'>
-        <br>
-            <button>Submit</button>
-    
-    </form>
+    <div class="container-sm">
+        <form class="form" action="/departments/<%=dept_name%>/research" method="POST" >
+            <div class="mb-3">
+
+                <label class="form-label" for="table">Table: </label>
+                <select name="table" class="form-control" id="table">
+                    <option value="">select</option>
+                    <option value="from_host_institution">Host Institution</option>
+                    <option value="from_other_institution">Other Institutions</option>
+                </select>
+            </div>
+            <div class="mb-3">
+
+                <label class="form-label" for="year">Year: </label>
+                <select class="form-control" name="Year" id="year">
+                    <option value="">select</option>
+                    <% years.forEach(year=>{ %>
+                        <option value="<%=year.Year%>"><%=year.Year%></option>    
+                    <% })%>
+                </select>
+            </div>
+            <div class="mb-3">
+
+                <label class="form-label" for="faculty_name">Faculty Name:</label>
+                <input type="text" class="form-control" id="faculty_name" name='faculty_name'>
+            </div>
+            <br>
+                <button class="btn btn-primary">Submit</button>
+        
+        </form>
+    </div>
     
 </div>
 
