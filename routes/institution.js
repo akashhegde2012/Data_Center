@@ -5,7 +5,7 @@ const   express = require('express'),
         connect = require('../models/db_connect');
         xlsx = require('xlsx');
 
-router.get('/',(req,res)=>{res.render('institution/index.ejs')})
+router.get('/',(req,res)=>{res.render('institution/index',{pagename:'Institution Details'})})
 router.get('/courses',RouteControll.getCourseOffered);
 router.get('/programs',RouteControll.getPrograms);
 router.get('/other',RouteControll.getOtherDetails);

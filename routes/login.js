@@ -7,7 +7,7 @@ const   express = require('express'),
 
 
 router.get('/',async(req,res)=>{
-    res.render('login')
+    res.render('login',{pagename:'Login'})
 })
 router.post('/',async(req,res)=>{
     const email = req.body.emailId;

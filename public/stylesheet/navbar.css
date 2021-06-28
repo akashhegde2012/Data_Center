@@ -145,10 +145,10 @@ transition: .5s;
 }
 .act{
     text-align: center;
-    margin: 3px;
-    background-color: rgba(255, 255, 255, .1);  
+    margin: 4px;
+    background-color: rgba(255, 255, 255, .2);  
     text-decoration: none;
-    color: white;
+    color: red;
     font-size: 1.2em;
     border: 1px solid transparent;
     padding: 0.5em;
@@ -160,4 +160,9 @@ transition: .5s;
 border-color: white;
 background-color: rgba(255, 255, 255, 0);
 transition: .5s;
+}
+.page{
+    width: 100px;
+    position: relative;
+    left: 80px;
 }

@@ -9,6 +9,7 @@ router.get('/',RouteControll.departmentHome);
 router.get('/:dept_name',RouteControll.getDepartment);
 router.get('/:dept_name/new',RouteControll.insertForm);
 router.post('/:dept_name',RouteControll.insertData);
+router.post('/:dept_name/form',RouteControll.insertByForm);
 router.get('/:dept_name/research',RouteControll.getResearch);
 router.get('/:dept_name/research/new',RouteControll.researchForm);
 router.post('/:dept_name/research',RouteControll.insertResearch);

@@ -36,11 +36,19 @@ router.get('/department',(req,res)=>{
 router.post('/department',(req,res)=>{
     const sql = 'insert into Departments set ?';
     const data = req.body;
-    data.forEach(entry=>{
-        db.query(sql,entry,(err,result)=>{
-            if(err) console.log(err);
+    if(data.length){
+        data.forEach(entry=>{
+            db.query(sql,entry,(err,result)=>{
+                if(err) console.log(err);
+            });
         });
-    });
+    }
+    else{
+        db.query(sql,data,(err,result)=>{
+            if(err)
+                console.log(err);
+        });
+    }
     res.end();
     // res.redirect('/departments/'+data[0].Dept_name);
 });
@@ -82,6 +90,28 @@ router.get('/student',(req,res)=>{
         res.status(201).json(rows);
     });
 });
+// to get the student name for a roll number
+router.get('/student/name' ,async(req,res)=>{
+    const {Roll_number} = req.query;
+    const qry = 'Select Name_of_students from students where Roll_number = ?';
+    await db.query(qry,Roll_number,(err,result)=>{
+        res.json(result);
+    })
+})
+// inserting all student dettails like new student , exam, outgoing, enrolled
+router.post('/student',async(req,res)=>{
+    const {table,data}=req.body;
+    const qry = 'insert into '+table+' set ?';
+    console.log(data,table);
+    await db.query(qry,data,(err,result)=>{
+        if(err){
+            console.log(err);
+            res.status(401);
+        }
+        else
+        res.end()
+    })
+})
 router.get('/teachers',async (req,res)=>{
     const {table,column} = req.query;
     const select = 'SELECT '+column;

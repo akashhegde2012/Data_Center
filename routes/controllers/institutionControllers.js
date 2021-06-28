@@ -18,7 +18,7 @@ RouteControll.getCourseOffered = async (req,res)=>{
         return res.data;
     }
     var courses = await fetchCourses();
-    res.render('institution/coursesOffered',{programs:programs.data,courses})
+    res.render('institution/coursesOffered',{programs:programs.data,courses, pagename:'Courses Offered'})
 }
 RouteControll.getOtherDetails = async(req,res)=>{
     const fetchOtherDetails = async (table_name)=>{
@@ -30,7 +30,7 @@ RouteControll.getOtherDetails = async(req,res)=>{
     const applications =await fetchOtherDetails('eligible_applications_received_for_admissions');
     const sanctioned   =await fetchOtherDetails('number_of_sanctioned_posts');
     const reserved     =await fetchOtherDetails('seats_earmarked_for_reserved_category');
-    res.render('institution/otherDetails',{applications,sanctioned,reserved,call:call});
+    res.render('institution/otherDetails',{applications,sanctioned,reserved,call:call, pagename:'Other Details'});
 }
 RouteControll.getPrograms = async (req,res)=>{
     const fetchOtherDetails = async (table_name)=>{
@@ -40,6 +40,6 @@ RouteControll.getPrograms = async (req,res)=>{
         return res.data;
     }
     const programs = await fetchOtherDetails('programs_offered_year_wise');
-    res.render('institution/programsOffered',{programs})
+    res.render('institution/programsOffered',{programs, pagename:"Programs Offered"})
 }
 module.exports = RouteControll;

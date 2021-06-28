@@ -25,7 +25,8 @@
         <option value="">Select</option>
         <option value="AT">AT</option>
         <option value="BT">BT</option>
-        <option value="CH">CV</option>
+        <option value="CH">CH</option>
+        <option value="CV">CV</option>
         <option value="CS">CS</option>
         <option value="EE">EE</option>
         <option value="EC">EC</option>
@@ -55,7 +56,44 @@
         <option value="LAC">LAC</option>
       </select>
       <button class="btn btn-warning">submit</button>
+      <% if(students.length>0){%>
+        <button type='button' class="btn btn-primary" id="generateExcel">Download</button>
+        <%}%>
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+          Insert
+        </button>  
     </form>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Insert New Record</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form action="/students/outgoing/" method="POST" id="new">
+                    <div class="form-group">
+                      <label for="Year">Year</label>
+                      <input required type="text" name='Year' class="form-control" id="Year"  placeholder="Enter eg(2019)">
+                    </div>
+                    <div class="form-group">
+                      <label for="Roll_number">Student USN</label>
+                      <input required type="text" name='Roll_number' minlength="10" maxlength="10" class="form-control" id="Roll_number" placeholder="Enter usn">
+                    </div>
+                    <div class="modal-footer">
+                      <!-- <input required type="submit" class="btn btn-primary"  value="Submit" formtarget="new"> -->
+                      <button type="submit" form="new" class="btn btn-primary">Submit</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </form>
+                </div>
+  
+              </div>
+            </div>
+          </div>
     <% if(students.length>0){%>
         <table class="example-table">
             <tr class="heading">
@@ -71,7 +109,6 @@
                 </tr>
             <%})%>
         </table>
-        <button class="btn btn-primary" id="generateExcel">Download</button>
     <%}%>
   </div>
 </div>

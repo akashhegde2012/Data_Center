@@ -1,0 +1,43 @@
+<%- include("../partials/header") %>
+<%- include("../partials/studentSidebar") %>
+
+<link rel="stylesheet" href="/stylesheet/details.css">
+
+<style>
+    .container-sm{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 400px;
+        background-color: black;
+        border-radius: 15px;
+        color: white;
+        padding: 2em;
+    }
+    .form input,.form select{
+        border-radius: 7px;
+        height: 35px;
+    }
+</style>
+<div class="content">
+    <div class="container-sm">
+        <form class="form" action="/students" method="POST" >
+            <div class="mb-3">
+                <label for="usn" class="form-label">Student USN </label>
+    
+                <input required  id="usn" class="form-control" type="text" name="Roll_number">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="name">name: </label>
+                <input required class="form-control" type="name" name="Name_of_students" id="name">
+    
+            </div>
+
+                <button class="btn btn-primary">Submit</button>
+        
+        </form>
+        
+    </div>
+</div>
+
+<%- include("../partials/footer") %>
