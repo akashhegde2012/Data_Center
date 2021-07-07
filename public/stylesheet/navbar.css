@@ -134,6 +134,7 @@ transition: .5s;
 } */
 .navbar{
     background: #303c6c; 
+    /* background-color: rgb(57, 86, 180,0.8); */
 
 }
 /* img{
@@ -141,7 +142,7 @@ transition: .5s;
     height: 65px;
 } */
 .right{
-    margin-left: 83%;
+    margin-left: 80%;
 }
 .act{
     text-align: center;

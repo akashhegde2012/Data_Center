@@ -49,7 +49,7 @@ RouteControll.insertForm = async(req,res)=>{
         'How many students have cleared Civil Services and Defense',
         'No of Research Scholars/PG students getting financial assistance',
     ]
-    res.render('departments/new',{columns,dept_name:req.params.dept_name,research:false,pagename:'insert'});
+    res.render('departments/new',{columns,dept_name:req.params.dept_name,research:false,pagename:'Insert'});
 
 }
 RouteControll.insertByForm = async(req,res)=>{

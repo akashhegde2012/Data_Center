@@ -4,10 +4,10 @@ const   express = require('express'),
         router = express.Router();
         connect = require('../models/db_connect');
         xlsx = require('xlsx');
-
-
+var msg = null;
 router.get('/',async(req,res)=>{
-    res.render('login',{pagename:'Login'})
+    res.render('login',{pagename:'Login',msg:msg});
+    msg=null;
 })
 router.post('/',async(req,res)=>{
     const email = req.body.emailId;
@@ -22,10 +22,12 @@ router.post('/',async(req,res)=>{
         }
         else{
             console.log('err')
+            msg='Incorrect username or password';
             res.redirect('/login')
         }
     }
     else{
+        msg='Incorrect username or password';
         console.log('no email');
         res.redirect('/login')
     }

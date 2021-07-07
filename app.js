@@ -45,8 +45,11 @@ app.use((req,res,next)=>{
 });
 
 app.get('/',(req,res)=>{
-
-        res.render('index',{pagename:''});
+    if(req.session.emailId)
+        res.render('index',{pagename:'Home'});
+    else{
+        res.redirect('/login');
+    }
 
 });
 
