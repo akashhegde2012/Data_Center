@@ -3,8 +3,11 @@ const { default: axios } = require("axios");
 var RouteControll = {};
 
 RouteControll.departmentHome = async (req,res)=>{
-    const departments = await axios.get('/api/all')
-    res.render('departments/index',{departments:departments.data,pagename:'Departments'})
+    const departments = await axios.get('/api/all');
+    if(req.session.authType === 'admin' || req.session.authType === 'principal')
+    res.status(200).render('departments/index',{departments:departments.data,pagename:'Departments'});
+    else
+    res.redirect('/departments/'+req.session.dept_name);
 }
 RouteControll.getDepartment = async (req,res)=>{
     const fet = async()=>{
@@ -19,7 +22,7 @@ RouteControll.getDepartment = async (req,res)=>{
         delete detail.Dept_name;
     }
     // res.xls('file.xlsx',details);
-    res.render('departments/department',{details:details,research:false,dept_name:req.params.dept_name,pagename:req.params.dept_name});
+    res.status(200).render('departments/department',{details:details,research:false,dept_name:req.params.dept_name,pagename:req.params.dept_name});
 
 }
 RouteControll.insertForm = async(req,res)=>{

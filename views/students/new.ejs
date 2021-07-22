@@ -18,9 +18,13 @@
         border-radius: 7px;
         height: 35px;
     }
+    .content{
+        border: none;
+    }
 </style>
 <div class="content">
     <div class="container-sm">
+        <h3>Enter New Student</h3>
         <form class="form" action="/students" method="POST" >
             <div class="mb-3">
                 <label for="usn" class="form-label">Student USN </label>
@@ -28,7 +32,7 @@
                 <input required  id="usn" class="form-control" type="text" name="Roll_number">
             </div>
             <div class="mb-3">
-                <label class="form-label" for="name">name: </label>
+                <label class="form-label" for="name">Student Name: </label>
                 <input required class="form-control" type="name" name="Name_of_students" id="name">
     
             </div>

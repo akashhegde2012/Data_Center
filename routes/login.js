@@ -6,7 +6,7 @@ const   express = require('express'),
         xlsx = require('xlsx');
 var msg = null;
 router.get('/',async(req,res)=>{
-    res.render('login',{pagename:'Login',msg:msg});
+    res.status(200).render('login',{pagename:'Login',msg:msg});
     msg=null;
 })
 router.post('/',async(req,res)=>{
@@ -18,6 +18,7 @@ router.post('/',async(req,res)=>{
             req.session.emailId=details.emailId;
             req.session.departmentId=details.departmentId;
             req.session.authType = details.type;
+            req.session.dept_name = details.Dept_name;
             res.redirect('/');
         }
         else{

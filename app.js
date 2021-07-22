@@ -84,3 +84,5 @@ app.use('/login',loginRoutes);
 app.listen(port,function(){
     console.log('app started');
 });
+
+module.exports = app;
