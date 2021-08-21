@@ -9,7 +9,8 @@ const   express = require('express'),
         fileupload = require('express-fileupload'),
         cors = require('cors'),
         json2xls = require('json2xls'),
-        fetch=require('node-fetch');
+        fetch=require('node-fetch'),
+        middlewareObj = require('./models/middleware'),
         port = process.env.PORT || 4000;
         app.use(cors());
         app.use(methodOverride('_method'));
@@ -45,6 +46,7 @@ app.use((req,res,next)=>{
 });
 
 app.get('/',(req,res)=>{
+
     if(req.session.emailId)
         res.render('index',{pagename:'Home'});
     else{

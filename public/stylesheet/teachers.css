@@ -35,3 +35,17 @@
     }
 
 }   
+.formnav {
+    border-collapse: collapse;
+    border:3px solid black;
+    width: 70rem;
+    padding: 10px;
+    position:relative;
+    margin: 0em 10em; 
+    background-color: #303c6c;   
+    max-width: 95%;
+    box-shadow: 1em 1em 1em -0.4em grey;
+  }
+ 
+  
+  

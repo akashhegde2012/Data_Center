@@ -122,7 +122,39 @@ router.get('/teachers',async (req,res)=>{
         res.status(201).json(rows);
     });
 });
+router.post('/teachers_joined',async (req,res)=>{
+    const {table1,table2,info} = req.body;
+    const qry1 = 'insert into '+table1+' set ?';
+    const qry2 = 'insert into '+table2+' set ?';
+    await db.query(qry1,info,(err,result)=>{
+        if(err){
+            console.log(err);
+            res.status(401);
+        }
 
+    })
+    await db.query(qry2,info,(err,result)=>{
+        if(err){
+            console.log(err);
+            res.status(401);
+        }
+    })
+    res.end();
+});
+router.post('/teachers_left',async (req,res)=>{
+    const {Name,Date_of_leaving} = req.body;
+    var table1 = 'teachers_presently_working'
+    var qry1 = 'select * from teachers_presently_working where Name = ?';
+    await db.query(qry1,Name,async (err,result)=>{
+        var data = result[0];
+        data.Date_of_leaving = Date_of_leaving;
+        var qry = 'insert into teachers_who_left_the_institution set ?';
+        await db.query(qry,data);
+    });
+    var qry2 = 'Delete from teachers_presently_working where Name = ?';
+    await db.query(qry2,Name);
+    res.end();
+})
 router.get('/allcourse',async (req,res)=>{
     var qry = 'select distinct Program_name from courses_offered';
     db.query(qry,(err,rows)=>{

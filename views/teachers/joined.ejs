@@ -2,15 +2,16 @@
 <%- include("../partials/teacherSidebar") %>
 
 <link rel="stylesheet" href="/stylesheet/Layout.css" />
-<link rel="stylesheet" href="/stylesheet/teachers.css"/>
-
+<link rel="stylesheet" href="/stylesheet/teachers.css">
 <div class="content">
-     
     <div class="container">
         <div class="formnav">
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
                 Insert
               </button>
+              &nbsp;
+              <button type='button' class="btn btn-primary" id="generateExcel">Download</button>
+
         </div>
            
                  <!-- Modal -->
@@ -24,23 +25,31 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <form action="/teachers/left/" method="POST" id="new">
+                  <form action="/teachers/joined/" method="POST" id="new">
                     <div class="form-group">
-                        <label for="Name">Name</label>
-                        <div class="form-group ">
-                            <select data-live-search="true" name="Name" id="Name">
-                                <option value="">Select</option>
-                            <% teachers2.forEach(teacher2=>{%>
-                                <option  data-tokens="<%=teacher2.Name%>" value="<%=teacher2.Name%>"><%=teacher2.Name%></option>
-                                
-                            <%})%>
-                            </select>
-                        </div>
-                        <div class="form-group ">
-                            <label for="Date_of_leaving%">Enter date of Leaving</label>
-                            <input required type="text" name='Date_of_leaving' class="form-control" id="Date_of_leaving" placeholder="dd/mm/yyyy">
-                        </div>
-                      </div>
+                      <label for="Name">Name</label>
+                      <input required type="text" name='Name' class="form-control" id="Name"  placeholder="Enter name">
+                    </div>
+                    <div class="form-group">
+                      <label for="ID_number_Aadhar_number">Aadhar Number</label>
+                      <input required type="text" name='ID_number_Aadhar_number' minlength="12"  class="form-control" id="ID_number_Aadhar_number" placeholder="Enter 12 digit ">
+                    </div>
+                    <div class="form-group ">
+                      <label for="Email">Enter email id</label>
+                      <input required type="email" name='Email' class="form-control" id="Email" placeholder="email">
+                    </div>
+                    <div class="form-group ">
+                        <label for="Gender">Enter date of joining</label>
+                        <input required type="text" name='Gender' class="form-control" id="Gender" placeholder="Gender">
+                    </div>
+                    <div class="form-group ">
+                        <label for="Designation">Enter Designation</label>
+                        <input required type="text" name='Designation' class="form-control" id="Designation" placeholder="Designation">
+                    </div>
+                    <div class="form-group ">
+                        <label for="Date_of_joining">Enter date of joining</label>
+                        <input required type="text" name='Date_of_joining' class="form-control" id="Date_of_joining" placeholder="dd/mm/yyyy">
+                    </div>
                     <div class="modal-footer">
                       <!-- <input required type="submit" class="btn btn-primary"  value="Submit" formtarget="new"> -->
                       <button type="submit" form="new" class="btn btn-primary">Submit</button>
@@ -52,7 +61,6 @@
               </div>
             </div>
           </div>
-        
         <table class="example-table">
             <thead>
                 <tr>

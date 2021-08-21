@@ -24,13 +24,16 @@
                         <td><%=teacher['ID_number_Aadhar_number']%></td>
                         <td><%=teacher.Email%></td>
                         <td><%=teacher.Designation%></td>
-                        <td><%=teacher.Date_of_joining_institution%></td>
+                        <td><%=teacher.Date_of_joining%></td>
                     </tr>    
                     
                 <%i++;})%>
             </tbody>
+            <button type='button' class="btn btn-primary" id="generateExcel">Download</button>
+
         </table>
     </div>
 </div>
+<script src="/javascript/excel.js"></script>
 
 <%- include("../partials/footer") %>
