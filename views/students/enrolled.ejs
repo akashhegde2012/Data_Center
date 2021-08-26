@@ -7,7 +7,7 @@
 
 <div class="content">
     <div class="container">
-      <form action="/students/enrolled" method="GET">
+      <form action="/students/enrolled" method="GET" class="query-form">
         <label for="Year">Select Year</label>
         <select name="Year" id="Year">
           <option value="">Select</option>
@@ -62,7 +62,12 @@
           <%}%>
           <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
             Insert
-          </button>  
+          </button>
+          <% if(students.length>0){%>     
+            <div>
+              Year : <%=students[0].Year%>
+            </div>
+          <%}%>  
       </form>
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -104,16 +109,16 @@
         <thead>
 
           <tr class="heading">
-              <td>Year</td>
+              <td style="display: none;">Year</td>
               <td>Name</td>
               <td>Date of enrollment</td>
-              <td>Roll Number</td>
+              <td>USN Number</td>
           </tr>
         </thead>
         <tbody>
           <% students.forEach(student=>{%>
               <tr>
-                  <td><%=student.Year%></td>
+                  <td style="display: none;"><%=student.Year%></td>
                   <td><%=student.Name_of_students%></td>
                   <td><%=student.Date_of_enrollment%></td>
                   <td><%=student.Roll_number%></td>

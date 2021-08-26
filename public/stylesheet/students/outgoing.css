@@ -1,7 +1,7 @@
-form {
+.query-form {
     font-size: 1.5em;
     color: white;
-    background: #303c6c;
+    background: #c30;
     padding: 1em 1em;
   }
  
@@ -14,6 +14,8 @@ form {
   .heading{
       font-weight: 700;
       font-size: 1.5rem;
+      background-color: #303c6c;
+      color: white;
   }
   td{
       width: 30rem;
@@ -21,10 +23,13 @@ form {
     padding-left: 1em;
 }
 table{
-    background-color: #f4976c;
+    /* background-color: #f4976c; */
+    /* background-color: rgb(218 139 63); */
+    background-color: #f6f6f6;
     /* background-color: white; */
+    width: 100%;
 border-collapse: collapse;
-box-shadow: 1em 1em 1em -0.4em grey;
+box-shadow: 1em 1em 1em 1em grey;
 
 }
 .modal{

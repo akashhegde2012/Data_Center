@@ -65,7 +65,6 @@ const   departmentsRoutes           = require('./routes/departments'),
         loginRoutes                 =require('./routes/login'),
         institutionRoutes           =require('./routes/institution');
         
-
 app.use('/departments',departmentsRoutes);
 app.use('/students',studentRoutes);
 app.use('/api',departmentApiRoutes);
@@ -73,6 +72,10 @@ app.use('/excel',excelApiRoutes);
 app.use('/teachers',teacherRoutes);
 app.use('/institution',institutionRoutes);
 app.use('/login',loginRoutes);
+app.get('*', function(req, res){
+    res.send('<h1>Page not found</h1>').status(404);
+  });
+
 // app.get('/query',async (req,res)=>{
 //     const fetchs=async ()=>{
 //         const res = await fetch('http://localhost:4000/fetch');

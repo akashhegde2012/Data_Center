@@ -7,7 +7,9 @@
     margin: 0em 10em;    
     max-width: 95%;
     box-shadow: 1em 1em 1em -0.4em grey;
-    background: #f4976c;
+    /* background: #f4976c; */
+    background-color: rgb(218 139 63);
+    
 }
 
 .example-table td,.example-table tr{

@@ -106,7 +106,6 @@ button:active{
     top: 7.5em;
     left: 12em;
     padding-left: 1.5rem;
-    border-left: 3px solid #303c6c;
     margin-bottom: 2em;
 }
 h2.heading{
@@ -124,7 +123,7 @@ h2.heading{
 }
 .table td{
 
-    background-color: #f4976c;
+    /* background-color: #f4976c; */
     padding-left: 2em;
     border-width: 2em;
     border: 3px solid black;

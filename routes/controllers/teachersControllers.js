@@ -6,14 +6,14 @@ RouteControll.getPresentTeachers = async (req,res)=>{
     var table = 'teachers_presently_working';
     var column = ' * ';
     var teachers = await axios.get('/api/teachers',{params:{table,column}})
-    res.render('teachers/present',{teachers:teachers.data,pagename:'Teachers Presently Working'});
+    res.render('teachers/present',{teachers:teachers.data,pagename:'Faculty Presently Working'});
 }
 RouteControll.getJoinedTeachers = async (req,res)=>{
     var table = 'teachers_who_left_or_joined_the_institution';
     var column = " * ";
     var teachers = await axios.get('/api/teachers',{params:{table,column}});
     // console.log(teachers)
-    res.render('teachers/joined',{teachers:teachers.data, pagename:'Teachers who joined the institution'});
+    res.render('teachers/joined',{teachers:teachers.data, pagename:'Faculty who joined the institution'});
 }
 RouteControll.newJoinedTeachers = async(req,res)=>{
     var table1 = 'teachers_who_left_or_joined_the_institution';
@@ -30,7 +30,7 @@ RouteControll.getLeftTeachers = async (req,res)=>{
     column = " * ";
     var teachers2 = await axios.get('/api/teachers',{params:{table,column}});
     // console.log(teachers)
-    res.render('teachers/left',{teachers:teachers.data,teachers2:teachers2.data,pagename:'Teachers who left the institution'});
+    res.render('teachers/left',{teachers:teachers.data,teachers2:teachers2.data,pagename:'Faculty who left the institution'});
 }
 RouteControll.newLeftTeachers = async (req,res)=>{
     await axios.post('/api/teachers_left',req.body);

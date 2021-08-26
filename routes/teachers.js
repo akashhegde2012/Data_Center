@@ -5,7 +5,7 @@ const   express = require('express'),
         connect = require('../models/db_connect');
         xlsx = require('xlsx');
 
-router.get('/',(req,res)=>{res.render('teachers/index',{pagename:'Teacher Details'})});
+router.get('/',(req,res)=>{res.render('teachers/index',{pagename:'Faculty Details'})});
 router.get('/present',RouteControll.getPresentTeachers);
 router.get('/joined',RouteControll.getJoinedTeachers);
 router.post('/joined',RouteControll.newJoinedTeachers);

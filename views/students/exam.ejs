@@ -7,7 +7,7 @@
 
 <div class="content">
     <div class="container">
-      <form action="/students/exam" method="GET" id="get">
+      <form action="/students/exam" method="GET" id="get" class="query-form">
         <label for="Year">Select Year</label>
         <select name="Year" id="Year">
           <option value="">Select</option>
@@ -64,8 +64,12 @@
        <!-- Button trigger modal -->
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
           Insert
-        </button>      
-
+        </button> 
+        <% if(students.length>0){%>     
+          <div>
+            Year : <%=students[0].Year%>
+          </div>
+        <%}%>
       </form>
               <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -107,18 +111,18 @@
         <thead>
 
           <tr class="heading">
-              <td>Year</td>
+              <td style="display: none;" >Year</td>
               <td>Name</td>
               <td>Date of exam</td>
-              <td>Roll Number</td>
+              <td>USN Number</td>
           </tr>
         </thead>
         <tbody>
           <% students.forEach(student=>{%>
               <tr>
-                  <td><%=student.Year%></td>
+                  <td style="display: none;"></td>
                   <td><%=student.Name_of_students%></td>
-                  <td><%=student.Date_of_appearing_in_exam%></td>
+                  <td><%=student.Date_of_appearing_in_exam.slice(0,10)%></td>
                   <td><%=student.Roll_number%></td>
               </tr>
           <%})%>

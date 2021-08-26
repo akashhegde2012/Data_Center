@@ -5,9 +5,12 @@
   z-index: 2;  
   top: 5em;
   left: 0;
-  background-color:#445592;
+  /* background-color:#445592; */
+  background-color: #c75;
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
+  padding-left: 2px;
+  padding-right: 2px;
   /* box-shadow: 1em 1em 1em -0.4em grey; */
 
 }
@@ -23,6 +26,7 @@
   font-weight: bold;
   margin: 0;
   background-color: #e7ebec;
+  /* background-color: rgb(151 115 149); */
   border:2px solid #303c6c;
   width: 100%;
   font-size: 0.9em;
