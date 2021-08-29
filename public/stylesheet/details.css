@@ -81,7 +81,7 @@ button{
     /* margin-left: 3.1em; */
     background-color: #d2fdff;
     border:2px solid #303c6c;
-    width: 10em;
+    width: max-content;
     font-size: 0.9em;
     padding: 0.5em 1em;
     outline: none;
@@ -109,7 +109,7 @@ button:active{
     margin-bottom: 2em;
 }
 h2.heading{
-    border: none;
+    border-bottom: 2px solid black;
     /* margin-left: 3em; */
 }
 .table th{
