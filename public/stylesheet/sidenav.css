@@ -5,8 +5,9 @@
   z-index: 2;  
   top: 5em;
   left: 0;
-  /* background-color:#445592; */
-  background-color: #c75;
+  background-color:#ca5c13ee;
+  /* background-color: rgb(43, 112, 148); clg_color_shade1 */
+ 
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
   padding-left: 2px;

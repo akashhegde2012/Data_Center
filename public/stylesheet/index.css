@@ -24,10 +24,10 @@
     margin: 2rem calc(11%/8) ;
     border-radius: 5% ;
     display: inline-table;
-    /* background: linear-gradient(to left, #303c6c , #303faf); */
+    background: linear-gradient(to left, #303c6cb7 , #3445c2c4);
     
     box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.7);
-    background-color: rgba(0, 100, 255, .5);  
+    /* background-color: rgba(0, 100, 255, .5);   */
     backdrop-filter: blur(2px);
     /* color:black;
     border: 2px solid rgb(65, 65, 65); */
@@ -35,11 +35,13 @@
     border: 2px solid rgb(65, 65, 65);
     text-align: center;
     transition: all 0.3s;
+    
 }
 .cards:hover{
     transform: translateY(-10px);
     /* border-color: brown; */
-    background-color: rgba(255, 255, 255, 0.15);  
+    /* background-color: rgba(255, 255, 255, 0.15);   */
+    background: whitesmoke;
 
     box-shadow: 1em 1em 1em -0.4em rgb(5, 5, 5);
 
@@ -53,7 +55,7 @@
     font-size: 1.2rem;
     padding: 1rem 1rem;
     text-decoration: none;
-    color: white;
+    color: whitesmoke;
     background-color: rgb(68, 0, 255);
     border: 1px solid #000023;
     border-radius: 0.5em;
@@ -68,4 +70,9 @@
     background-color: rgb(31, 177, 31);
     border-radius: 0.5em;
     border-width: 0.15em;
+}
+.btn-info {
+    border-color: black;
+    background: linear-gradient(to left, #3445c275,#39478160 );
+    
 }

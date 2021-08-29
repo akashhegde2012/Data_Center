@@ -1,7 +1,7 @@
 .query-form {
     font-size: 1.7em;
-    color: white;
-    background: #c30;
+    color: whitesmoke;
+    background: #3c3c6c;
     padding: 1em 1em;
   }
  
@@ -15,7 +15,7 @@
       font-weight: 700;
       font-size: 1.5rem;
       background-color: #303c6c;
-      color: white;
+      color: whitesmoke;
   }
   td{
       width: 30rem;
@@ -26,7 +26,7 @@ table{
     /* background-color: #f4976c; */
     /* background-color: rgb(218 139 63); */
     background-color: #f6f6f6;
-    /* background-color: white; */
+    /* background-color: whitesmoke; */
     width: 100%;
 border-collapse: collapse;
 box-shadow: 1em 1em 1em -0.4em grey;

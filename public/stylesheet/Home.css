@@ -26,13 +26,15 @@
     font-size: 1.2rem;
     padding: 1rem 1rem;
     color: rgb(3, 3, 3);
-    background-color: rgb(239, 237, 243);
+    /* background-color: rgb(239, 237, 243); */
+    background-color: whitesmoke;
     border: 1px solid #000023;   
     transition: all 0.3s;
     position: relative;
 }
 .a:hover{
-    color: rgb(250, 246, 246);
+    /* color: rgb(250, 246, 246); */
+    color: whitesmoke;
     background-color: rgba(3, 3, 3, 0.616);    
     border-width: 0.1em;
 }
@@ -103,7 +105,8 @@ list-style: none;
     border-radius: 5%;
 } */
 .card{
-    background-color: white;
+    /* background-color: whitesmoke; */
+    background-color: whitesmoke ;
     margin:20px 1%;
     height: 20rem;
     font-size: 1.5em;
@@ -118,7 +121,8 @@ list-style: none;
     flex-wrap: wrap;
 }
 h1{
-    background-color: white;
+    /* background-color: whitesmoke; */
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.815) , rgba(245, 245, 245, 0.918));
     color: black;
     width:25%;
     margin: 20px auto;
