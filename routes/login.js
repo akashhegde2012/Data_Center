@@ -18,7 +18,7 @@ router.post('/',async(req,res)=>{
             req.session.emailId=details.emailId;
             req.session.departmentId=details.departmentId;
             req.session.authType = details.type;
-            req.session.dept_name = details.Dept_name;
+            // req.session.dept_name = details.Dept_name;
             res.redirect('/');
         }
         else{

@@ -118,14 +118,14 @@
           </tr>
         </thead>
         <tbody>
-          <% students.forEach(student=>{%>
+          <%var i=1;  students.forEach(student=>{%>
               <tr>
                   <td style="display: none;"></td>
                   <td><%=student.Name_of_students%></td>
-                  <td><%=student.Date_of_appearing_in_exam.slice(0,10)%></td>
+                  <td><%=student.Date_of_appearing_in_exam%></td>
                   <td><%=student.Roll_number%></td>
               </tr>
-          <%})%>
+          <%i++;})%>
         </tbody>
           </table>
       <%}%>

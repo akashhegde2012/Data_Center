@@ -4,10 +4,11 @@ var RouteControll = {};
 
 RouteControll.departmentHome = async (req,res)=>{
     const departments = await axios.get('/api/all');
-    if(req.session.authType === 'admin' || req.session.authType === 'principal')
+    // if(req.session.authType === 'admin' || req.session.authType === 'principal')
+    // res.status(200).render('departments/index',{departments:departments.data,pagename:'Departments'});
+    // else
+    // res.redirect('/departments/'+req.session.dept_name);
     res.status(200).render('departments/index',{departments:departments.data,pagename:'Departments'});
-    else
-    res.redirect('/departments/'+req.session.dept_name);
 }
 RouteControll.getDepartment = async (req,res)=>{
     const fet = async()=>{
